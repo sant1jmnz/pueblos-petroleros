@@ -190,6 +190,18 @@ svg.sun{width:100%;height:100%}
 .company-tags span{border:2px solid var(--cafe);border-radius:99px;padding:10px 22px;font-size:22px;font-weight:600}
 
 /* ===========================================================
+   COMPONENTE · mini gráfico de línea (empleo YPF, PDVSA)
+   El trazo se "dibuja" al entrar a la slide vía stroke-dashoffset;
+   --len lo calcula JS con path.getTotalLength() en cada .line.
+   =========================================================== */
+.linechart{overflow:visible}
+.linechart .line{fill:none;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:var(--len,1000);stroke-dashoffset:var(--len,1000);transition:stroke-dashoffset 1.7s var(--ease-spring) .4s}
+.visible .linechart .line{stroke-dashoffset:0}
+.linechart .pt{opacity:0;transform:scale(0);transform-box:fill-box;transform-origin:center;transition:opacity .4s var(--ease),transform .5s var(--ease-spring)}
+.visible .linechart .pt{opacity:1;transform:scale(1)}
+.linechart .axis{stroke-width:2}
+
+/* ===========================================================
    COMPONENTE · antes / después arrastrable
    =========================================================== */
 .compare{position:absolute;left:120px;right:120px;top:400px;bottom:96px;border-radius:40px;overflow:hidden}
@@ -363,7 +375,17 @@ svg.sun{width:100%;height:100%}
     <p class="lead-copy r d3">La privatización trae despidos masivos y retiros "voluntarios". El pueblo que YPF construyó empieza a vaciarse.</p>
   </div>
   <div class="grid3" style="top:auto;height:420px">
-    <div class="stat-card cafe r stack d3"><small>Empleo</small><div class="num" style="font-size:100px">↓</div><p>Miles de puestos de YPF se pierden entre fines de los 80 y los 90.</p></div>
+    <div class="stat-card cafe r stack d3">
+      <small>Empleo YPF</small>
+      <svg class="linechart" viewBox="0 0 220 100" style="width:100%;height:104px;margin-top:12px">
+        <path class="line" d="M10,16 C 90,16 150,64 210,80" stroke="currentColor"/>
+        <circle class="pt" cx="10" cy="16" r="7" fill="currentColor" style="transition-delay:.7s"/>
+        <circle class="pt" cx="210" cy="80" r="7" fill="currentColor" style="transition-delay:1.3s"/>
+        <text x="10" y="34" style="font-family:var(--mono);font-size:14px;fill:currentColor;opacity:.85">52.000</text>
+        <text x="210" y="96" text-anchor="end" style="font-family:var(--mono);font-size:14px;fill:currentColor;opacity:.85">5.700</text>
+      </svg>
+      <p>De ~52.000 empleados en 1990 a ~5.700 hacia 1995 — cifra aproximada, reestructuración de YPF.</p>
+    </div>
     <div class="stat-card oxido r stack d4"><small>Comercio</small><div class="num" style="font-size:100px">↓</div><p>Sin sueldos estables, el comercio local se contrae y cierra.</p></div>
     <div class="stat-card sand r stack d5"><small>Población</small><div class="num" style="font-size:100px">↓</div><p>Parte de las familias emigra buscando trabajo en otro lado.</p></div>
   </div>
@@ -454,6 +476,64 @@ svg.sun{width:100%;height:100%}
 </section>
 
 <!-- ============================================================ -->
+<!-- BLOQUE VENEZUELA · EL OTRO CAMINO (cierre comparativo) -->
+<!-- ============================================================ -->
+<section class="slide s-lead">
+  <div class="who r d1">Cierre comparativo · <span class="n" style="font-size:22px">VE</span></div>
+  <div class="head">
+    <h2 class="r d2">El otro camino<br>del <em>petróleo</em></h2>
+    <p class="lead-copy r d3">Mientras acá YPF se privatizaba, PDVSA vivía su propia apertura — y después, en los dos países, el péndulo volvió al Estado casi al mismo tiempo.</p>
+  </div>
+  <div class="split" style="top:400px">
+    <div class="col r d3">
+      <span class="tag" style="margin-bottom:22px;width:fit-content">Argentina</span>
+      <ul>
+        <li><b>1990s —</b> privatización de YPF, sale a bolsa.</li>
+        <li><b>1999 —</b> Repsol toma el control accionario.</li>
+        <li><b>2012 —</b> el Estado re-estatiza YPF, expropia el 51% a Repsol.</li>
+      </ul>
+    </div>
+    <div class="col r d4">
+      <span class="tag fill" style="margin-bottom:22px;width:fit-content">Venezuela</span>
+      <ul>
+        <li><b>1976 —</b> nacionalización del petróleo, nace PDVSA.</li>
+        <li><b>1990s —</b> "apertura petrolera" a capitales privados.</li>
+        <li><b>2007 —</b> renacionalización de la Faja del Orinoco.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="head">
+    <h2 class="r d1">Auge, colapso<br>y <em>éxodo</em></h2>
+    <p class="lead-copy r d2">El mismo patrón que en Cutral Có y Tartagal, multiplicado por la escala de un país entero.</p>
+  </div>
+  <div class="split" style="top:400px">
+    <div class="col r d3">
+      <div class="stat-card cafe" style="height:100%">
+        <small>Producción de PDVSA</small>
+        <svg class="linechart" viewBox="0 0 400 220" style="width:100%;height:230px;margin-top:16px">
+          <line class="axis" x1="0" y1="188" x2="400" y2="188" stroke="currentColor" opacity=".2"/>
+          <path class="line" d="M10,30 L140,55 L270,150 L390,178" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle class="pt" cx="10" cy="30" r="7" fill="currentColor" style="transition-delay:.6s"/>
+          <circle class="pt" cx="140" cy="55" r="7" fill="currentColor" style="transition-delay:.9s"/>
+          <circle class="pt" cx="270" cy="150" r="7" fill="currentColor" style="transition-delay:1.2s"/>
+          <circle class="pt" cx="390" cy="178" r="7" fill="currentColor" style="transition-delay:1.5s"/>
+          <text x="10" y="20" style="font-family:var(--mono);font-size:15px;fill:currentColor;opacity:.85">~3,2 M bd · 2000</text>
+          <text x="390" y="212" text-anchor="end" style="font-family:var(--mono);font-size:15px;fill:currentColor;opacity:.85">~0,4 M bd · 2020</text>
+        </svg>
+        <p style="margin-top:10px">Cifras aproximadas (OPEP). El derrumbe se acelera tras 2014, con la caída del precio del crudo y las sanciones a PDVSA.</p>
+      </div>
+    </div>
+    <div class="col r d4" style="gap:24px">
+      <div class="stat-card oxido"><small>Éxodo migratorio</small><div class="num" style="font-size:90px">7,7M+</div><p>Personas que dejaron Venezuela desde 2014, según la plataforma R4V (ACNUR / OIM).</p></div>
+      <div class="stat-card sand"><small>Lago de Maracaibo</small><p style="margin-top:auto">Derrames y filtraciones constantes contaminan el mismo lago que dio origen a la industria petrolera venezolana en 1914 — su propia "pileta de purga" a escala continental.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
 <!-- CIERRE -->
 <!-- ============================================================ -->
 <section class="slide s-close">
@@ -495,6 +575,12 @@ svg.sun{width:100%;height:100%}
           <li>Three.js — mapa 3D</li>
           <li>Google Fonts — Big Shoulders Display, IBM Plex Sans, IBM Plex Mono</li>
         </ul>
+        <h4>Venezuela</h4>
+        <ul>
+          <li>Producción histórica de PDVSA — OPEP, Boletín Estadístico Anual (cifras aproximadas)</li>
+          <li>Migración venezolana (7,7M+) — Plataforma R4V, ACNUR / OIM, datos acumulados</li>
+          <li>Cronología PDVSA / Faja del Orinoco: Ley Orgánica de Hidrocarburos 2001 y renacionalización 2007 — <b>a completar</b> con fuentes oficiales</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -533,20 +619,22 @@ addEventListener('resize',fitStage); fitStage();
    NOTAS DEL ORADOR POR SLIDE (tecla N)
    =========================================================== */
 const NOTES=[
-"Portada. Presentamos el trabajo: cuatro ciudades petroleras argentinas, desde el auge de YPF hasta las puebladas.",
-"Ubicamos las dos cuencas en el mapa: Neuquina (Cutral Có, Plaza Huincul) y Noroeste (Tartagal, Gral. Mosconi).",
-"Integrante 1: en los 80 YPF no solo daba trabajo, construía el pueblo entero alrededor del pozo — modelo 'company town'.",
-"Detallamos los servicios que YPF sostenía: vivienda, hospital, escuela, clubes y colonias de vacaciones.",
-"Integrante 2: explicamos la Ley de Reforma del Estado de 1989 y el camino de YPF hacia la privatización en los 90.",
-"Mostramos qué empresas entraron a la cuenca y por qué gran parte de las ganancias se va fuera del país.",
-"Integrante 3: los despidos masivos y retiros 'voluntarios' vacían el pueblo — cae el empleo, el comercio y la población.",
-"Comparamos con la imagen antes/después: el mismo tipo de paisaje, activo vs. lo que queda cuando la empresa se retira.",
-"Integrante 4: dos ecosistemas distintos, estepa patagónica y yungas salteñas, reciben la misma presión hidrocarburífera.",
-"Repasamos los pasivos ambientales concretos: piletas de purga, fragmentación del hábitat y contaminación de napas.",
-"Integrante 5: sin fábrica ni patrón, los vecinos usan la ruta como herramienta de protesta — línea de tiempo 1996-2001.",
-"De esas puebladas nacen los MTD y las cooperativas: el germen del movimiento piquetero patagónico y salteño.",
-"Cerramos con la idea fuerza: una decisión económica reordena por completo la geografía, la sociedad y el ambiente.",
-"Fuentes y créditos de las fotos y los datos usados."
+"INTEGRANTE 1 — Buenas, somos el grupo de Geografía y hoy vamos a contar la historia de cuatro pueblos petroleros argentinos: cómo nacieron con YPF, qué pasó cuando el Estado se retiró, y cómo esa misma historia se repite, con el signo político invertido, en Venezuela.",
+"INTEGRANTE 1 — Hablamos de dos cuencas bien distintas: la Cuenca Neuquina, con Cutral Có y Plaza Huincul, y la cuenca del Noroeste, con Tartagal y General Mosconi. Dos puntas del país, la misma lógica económica.",
+"INTEGRANTE 1 — Arranco yo con la era dorada. A principios de los 80, YPF no solo sacaba petróleo: construía el pueblo entero alrededor del pozo. Es el modelo de 'company town'.",
+"INTEGRANTE 1 — El Estado, vía YPF, diseñaba y financiaba las casas, las calles y las plazas; tenía hospital, escuela y policlínico propios y gratuitos, más clubes, cines y colonias de vacaciones. Era, a veces, el único empleador del pueblo.",
+"INTEGRANTE 2 — Ahora sigo yo. En los 90 todo esto cambia: YPF deja de ser estatal y el petróleo pasa a manos privadas, muchas de ellas extranjeras.",
+"INTEGRANTE 2 — En 1989 la Ley de Reforma del Estado habilita privatizar YPF; entre 1993 y 1999 se transforma en sociedad anónima, sale a bolsa y Repsol se queda con el control. La explotación queda repartida entre operadoras nacionales y extranjeras, y buena parte de las ganancias se va a las casas matrices en el exterior.",
+"INTEGRANTE 3 — Con la privatización llegan los despidos masivos y los retiros 'voluntarios': el pueblo que había construido YPF empieza a vaciarse.",
+"INTEGRANTE 3 — En YPF se pasa de unos 52.000 empleados a poco más de 5.000 en apenas unos años; el comercio se cae sin sueldos que lo sostengan y parte de las familias emigra. Esta imagen lo resume: el mismo lugar, antes en actividad y hoy en ruinas — los invitamos a deslizar para comparar.",
+"INTEGRANTE 4 — Yo me ocupo de la parte ambiental. Dos ecosistemas opuestos, la estepa patagónica y las yungas salteñas, reciben la misma presión hidrocarburífera.",
+"INTEGRANTE 4 — Décadas de actividad dejan pasivos que no siempre se ven a simple vista: piletas de purga a cielo abierto, picadas y caminos que fragmentan el hábitat, y derrames que contaminan las napas subterráneas.",
+"INTEGRANTE 5 — Para cerrar la parte argentina, cuento cómo responde la gente: sin fábrica que ocupar ni patrón a quien reclamarle, los vecinos usan lo único que tienen a mano, la ruta.",
+"INTEGRANTE 5 — En 1996-97 pasa el 'Cutralcazo' en Cutral Có y Plaza Huincul; entre 1997 y 2001 la protesta se repite en Tartagal y Mosconi. De esas puebladas nacen los Movimientos de Trabajadores Desocupados y las cooperativas — el germen del movimiento piquetero, antes incluso del 2001 nacional.",
+"INTEGRANTE 5 — Y acá abrimos el foco, porque esta historia de Estado, petróleo y pueblo se repite en Venezuela con el signo invertido. Mientras acá YPF se privatizaba en los 90, PDVSA —nacionalizada en 1976— vivía su propia apertura a capitales privados en esa misma década. Desde 2007 el gobierno de Chávez revierte eso y renacionaliza la Faja del Orinoco, casi al mismo tiempo que Argentina re-estatiza YPF en 2012. Dos países, el mismo péndulo entre lo privado y lo estatal.",
+"INTEGRANTE 5 — El desenlace también se repite: la producción de PDVSA cae de más de 3 millones de barriles diarios a comienzos de los 2000 a unos cientos de miles hacia 2020, el Lago de Maracaibo sufre derrames constantes, y más de 7,7 millones de personas dejaron Venezuela según la plataforma R4V. El mismo patrón que vimos en Cutral Có y Tartagal, multiplicado por la escala de un país entero.",
+"INTEGRANTE 5 — Para cerrar: que el Estado se retire del petróleo, como en la Argentina de los 90, o que lo controle por completo, como la Venezuela reciente, termina reordenando igual la geografía, la sociedad y el ambiente de un territorio. Gracias.",
+"Estas son las fuentes que usamos para armar todo esto."
 ];
 const notesPanel=document.getElementById('notesPanel'), notesText=document.getElementById('notesText');
 let notesOpen=false;
@@ -558,6 +646,7 @@ document.getElementById('notesClose').addEventListener('click',()=>toggleNotes(f
    NAVEGACIÓN DE SLIDES
    =========================================================== */
 const slides=[...document.querySelectorAll('.slide')];
+document.querySelectorAll('.linechart .line').forEach(p=>{ p.style.setProperty('--len', p.getTotalLength()); });
 let i=0;
 const countEl=document.getElementById('count'), progEl=document.getElementById('prog');
 function go(n){
