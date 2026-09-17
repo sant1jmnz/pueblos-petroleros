@@ -76,8 +76,6 @@ svg.sun{width:100%;height:100%}
 /* chrome global (fuera de la caja de la diapositiva) */
 .chrome{position:fixed;left:0;right:0;bottom:22px;z-index:1000;display:flex;justify-content:center;align-items:center;gap:18px;pointer-events:none;font-family:var(--sans)}
 .chrome *{pointer-events:auto}
-.progress{width:min(50vw,560px);height:3px;background:var(--line);border-radius:99px;overflow:hidden}
-.progress i{display:block;height:100%;background:var(--oxido);border-radius:99px;transition:width .5s var(--ease)}
 .count{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--cafe);letter-spacing:.08em;background:rgba(243,244,238,.9);padding:6px 12px;border-radius:6px}
 #helpTip{position:fixed;right:20px;bottom:20px;z-index:1000;font-family:var(--mono);font-size:12px;color:var(--muted);background:rgba(243,244,238,.9);padding:8px 14px;border-radius:6px;transition:opacity .4s}
 
@@ -175,17 +173,8 @@ svg.sun{width:100%;height:100%}
 .grid3 .stack:nth-child(3){--rot:5deg}
 
 /* ===========================================================
-   COMPONENTE · barra comparativa (nacional vs extranjero)
+   COMPONENTE · tags de empresas
    =========================================================== */
-.bars{margin-top:40px}
-.bars .row{margin-bottom:34px}
-.bars .row .top{display:flex;justify-content:space-between;font-size:24px;font-weight:600;margin-bottom:10px}
-.bars .track{height:34px;border-radius:99px;background:var(--sand);overflow:hidden}
-.bars .fill{height:100%;border-radius:99px;width:0;transition:width 1.4s var(--ease-spring)}
-.bars .fill.oxido{background:var(--oxido)}
-.bars .fill.cafe{background:var(--cafe)}
-.visible .bars .fill.f1{width:38%}
-.visible .bars .fill.f2{width:62%}
 .company-tags{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
 .company-tags span{border:2px solid var(--cafe);border-radius:99px;padding:10px 22px;font-size:22px;font-weight:600}
 
@@ -200,6 +189,28 @@ svg.sun{width:100%;height:100%}
 .linechart .pt{opacity:0;transform:scale(0);transform-box:fill-box;transform-origin:center;transition:opacity .4s var(--ease),transform .5s var(--ease-spring)}
 .visible .linechart .pt{opacity:1;transform:scale(1)}
 .linechart .axis{stroke-width:2}
+
+/* ===========================================================
+   COMPONENTE · gráfico de dona (capital nacional / extranjero)
+   =========================================================== */
+.donut{width:220px;height:220px}
+.donut circle{fill:none;stroke-width:26}
+.donut .bg{stroke:var(--sand)}
+.donut .fg{stroke:var(--oxido);stroke-linecap:round;transform-origin:100px 100px;transform:rotate(-90deg);stroke-dasharray:502.4;stroke-dashoffset:502.4;transition:stroke-dashoffset 1.6s var(--ease-spring) .3s}
+.visible .donut .fg{stroke-dashoffset:var(--offset)}
+.donut .pct{font-family:var(--display);font-weight:800;fill:var(--cafe);font-size:44px}
+.donut .lbl{font-family:var(--mono);font-size:16px;fill:var(--muted)}
+.legend{display:flex;gap:28px;flex-wrap:wrap}
+.legend span{display:flex;align-items:center;gap:10px;font-size:20px}
+.legend i{width:16px;height:16px;border-radius:4px;display:inline-block}
+
+/* ===========================================================
+   COMPONENTE · navegación por puntos (chrome, clickeable)
+   =========================================================== */
+.dots{display:flex;gap:9px;align-items:center}
+.dots button{width:9px;height:9px;border-radius:50%;background:var(--line);border:none;padding:0;cursor:pointer;transition:transform .3s var(--ease-spring),background .3s}
+.dots button:hover{transform:scale(1.35)}
+.dots button.active{background:var(--oxido);transform:scale(1.45)}
 
 /* ===========================================================
    COMPONENTE · antes / después arrastrable
@@ -349,12 +360,18 @@ svg.sun{width:100%;height:100%}
     <p class="lead-copy r d2">La exploración y explotación queda repartida entre operadoras nacionales y extranjeras, cada una con distinta escala.</p>
   </div>
   <div class="split" style="grid-template-columns:1fr 1fr">
-    <div class="col r d3">
-      <div class="bars">
-        <div class="row"><div class="top"><span>Capital nacional</span><span>—</span></div><div class="track"><div class="fill oxido f1"></div></div></div>
-        <div class="row"><div class="top"><span>Capital extranjero</span><span>—</span></div><div class="track"><div class="fill cafe f2"></div></div></div>
+    <div class="col r d3" style="align-items:flex-start;gap:26px">
+      <svg class="donut" viewBox="0 0 200 200">
+        <circle class="bg" cx="100" cy="100" r="80"/>
+        <circle class="fg" cx="100" cy="100" r="80" style="--offset:327"/>
+        <text class="pct" x="100" y="94" text-anchor="middle">35%</text>
+        <text class="lbl" x="100" y="122" text-anchor="middle">nacional</text>
+      </svg>
+      <div class="legend">
+        <span><i style="background:var(--oxido)"></i>Capital nacional</span>
+        <span><i style="background:var(--sand)"></i>Capital extranjero</span>
       </div>
-      <p style="font-size:19px;color:var(--muted);margin-top:8px">Proporción ilustrativa — completar con datos de la Secretaría de Energía.</p>
+      <p style="font-size:19px;color:var(--muted)">Proporción ilustrativa — completar con datos de la Secretaría de Energía.</p>
     </div>
     <div class="col r d4">
       <div class="company-tags">
@@ -598,7 +615,7 @@ svg.sun{width:100%;height:100%}
   <span style="--x:78%;--dur:14s;--delay:6.8s"></span>
   <span style="--x:91%;--dur:12.5s;--delay:4.2s"></span>
 </div>
-<div class="chrome"><span class="count" id="count">1 / 15</span><div class="progress"><i id="prog"></i></div></div>
+<div class="chrome"><span class="count" id="count">1 / 15</span><div class="dots" id="dots"></div></div>
 <div id="helpTip">← → avanzar · M mapa · N notas · P imprimir/PDF</div>
 <div id="notesPanel"><span class="close" id="notesClose">cerrar (N)</span><h4>Notas del orador</h4><p id="notesText"></p></div>
 
@@ -648,7 +665,14 @@ document.getElementById('notesClose').addEventListener('click',()=>toggleNotes(f
 const slides=[...document.querySelectorAll('.slide')];
 document.querySelectorAll('.linechart .line').forEach(p=>{ p.style.setProperty('--len', p.getTotalLength()); });
 let i=0;
-const countEl=document.getElementById('count'), progEl=document.getElementById('prog');
+const countEl=document.getElementById('count'), dotsEl=document.getElementById('dots');
+const dots=slides.map((s,k)=>{
+  const b=document.createElement('button');
+  b.setAttribute('aria-label','Ir a la diapositiva '+(k+1));
+  b.addEventListener('click',()=>go(k));
+  dotsEl.appendChild(b);
+  return b;
+});
 function go(n){
   i=Math.max(0,Math.min(slides.length-1,n));
   slides.forEach((s,k)=>{ s.classList.toggle('active',k===i); s.classList.remove('visible'); });
@@ -660,7 +684,7 @@ function go(n){
   void slides[i].offsetWidth;
   slides[i].classList.add('visible');
   countEl.textContent=(i+1)+' / '+slides.length;
-  progEl.style.width=((i+1)/slides.length*100)+'%';
+  dots.forEach((b,k)=>b.classList.toggle('active',k===i));
   if(notesOpen) renderNotes();
   document.getElementById('mapStage').style.display = (i===1)?'block':'none';
   if(slides[i].querySelector('#compareBox') && window.__compareHint) setTimeout(window.__compareHint,900);
