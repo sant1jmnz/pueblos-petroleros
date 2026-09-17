@@ -378,6 +378,21 @@ svg.sun{width:100%;height:100%}
 </section>
 
 <!-- ============================================================ -->
+<!-- CONTEXTO REGIONAL · LA VUELTA AL ESTADO (Venezuela + Argentina) -->
+<!-- ============================================================ -->
+<section class="slide">
+  <div class="head">
+    <h2 class="r d1">La vuelta<br>al <em>Estado</em></h2>
+    <p class="lead-copy r d2">Años después, el péndulo vuelve: los dos países recuperan el control de su petróleo.</p>
+  </div>
+  <div class="grid3">
+    <div class="stat-card cafe r stack d3" style="color:var(--slide-bg)"><small style="opacity:.7">Venezuela · 2001–2007</small><div class="num" style="font-size:100px">60%</div><p style="opacity:.9">La Ley de Hidrocarburos y la nacionalización de la Faja del Orinoco llevan a PDVSA a controlar, como mínimo, el 60% de cada empresa mixta.</p></div>
+    <div class="stat-card oxido r stack d4"><small>Argentina · 2012</small><div class="num" style="font-size:100px">51%</div><p>El Congreso expropia el 51% de las acciones de YPF en manos de Repsol — Ley 26.741, de Soberanía Hidrocarburífera.</p></div>
+    <div class="photo-card zoom r stack d5"><img src="assets/refineria.jpg" alt="Tanques de almacenamiento en la refinería de Puerto La Cruz, Venezuela"><span class="credit" style="left:20px;bottom:16px;background:rgba(4,6,8,.75);padding:6px 14px;border-radius:6px">Refinería, Puerto La Cruz</span></div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
 <!-- BLOQUE 3 · CIUDAD FANTASMA (Integrante 3) -->
 <!-- ============================================================ -->
 <section class="slide s-lead">
@@ -504,6 +519,7 @@ svg.sun{width:100%;height:100%}
           <li>Ruta Nacional 22, Neuquén — Wikimedia Commons</li>
           <li>Quema de neumáticos, corte de ruta — P. M. Longo, Wikimedia Commons (CC BY 3.0)</li>
           <li>Ruinas de asentamiento, Plaza Huincul — Wikimedia Commons</li>
+          <li>Refinería, Puerto La Cruz, Venezuela — Wikimedia Commons</li>
         </ul>
       </div>
       <div class="r d3">
@@ -517,6 +533,8 @@ svg.sun{width:100%;height:100%}
         <ul>
           <li>Apertura Petrolera y asociaciones estratégicas — <i>Faja petrolífera del Orinoco</i>, Wikipedia</li>
           <li>Producción y facturación de PDVSA, 1997 — íd.</li>
+          <li>Ley Orgánica de Hidrocarburos (2001) y empresas mixtas — <i>Ley de Hidrocarburos de Venezuela</i>, Wikipedia</li>
+          <li>Ley 26.741, expropiación del 51% de YPF (2012) — Boletín Oficial de la República Argentina</li>
         </ul>
       </div>
       <div class="r d4">
@@ -575,6 +593,7 @@ const NOTES=[
 "Explicamos la Ley de Reforma del Estado de 1989 y el camino de YPF hacia la privatización en los 90.",
 "Mostramos qué empresas entraron a la cuenca y por qué gran parte de las ganancias se va fuera del país.",
 "Mismo patrón en otro país: Venezuela abre PDVSA al capital extranjero con la Apertura Petrolera, aunque sin privatizarla del todo.",
+"Años después el péndulo vuelve en los dos países: Venezuela nacionaliza la Faja del Orinoco (2001-2007) y Argentina expropia el 51% de YPF a Repsol (2012).",
 "Los despidos masivos y retiros 'voluntarios' vacían el pueblo — cae el empleo, el comercio y la población.",
 "Comparamos con la imagen antes/después: el mismo tipo de paisaje, activo vs. lo que queda cuando la empresa se retira.",
 "Dos ecosistemas distintos, estepa patagónica y yungas salteñas, reciben la misma presión hidrocarburífera.",
@@ -756,7 +775,7 @@ lightbox.addEventListener('click',closeLightbox);
     lbl.addEventListener('click',onTap); hit.addEventListener('click',onTap);
     return pin;
   }
-  const pins=[addPin(ARG_CITIES.neuquen,2),addPin(ARG_CITIES.salta,9)];
+  const pins=[addPin(ARG_CITIES.neuquen,2),addPin(ARG_CITIES.salta,10)];
 
   // encuadre robusto: caja/esfera envolvente real del grupo YA rotado,
   // en vez de trigonometría manual sobre la proyección.
