@@ -152,7 +152,6 @@ svg.sun{width:100%;height:100%}
 .head{position:absolute;left:120px;top:104px;right:120px;display:flex;justify-content:space-between;align-items:flex-start}
 .head h2{font-weight:500;font-size:118px;line-height:.92}
 .lead-copy{width:560px;font-size:29px;line-height:1.4;color:var(--muted);margin:0}
-.s-lead .who{position:absolute;left:120px;top:56px;font-size:19px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 
 /* ===========================================================
    COMPONENTE · SPLIT foto/texto 50-50
@@ -177,15 +176,6 @@ svg.sun{width:100%;height:100%}
 /* ===========================================================
    COMPONENTE · barra comparativa (nacional vs extranjero)
    =========================================================== */
-.bars{margin-top:40px}
-.bars .row{margin-bottom:34px}
-.bars .row .top{display:flex;justify-content:space-between;font-size:24px;font-weight:600;margin-bottom:10px}
-.bars .track{height:34px;border-radius:99px;background:var(--sand);overflow:hidden}
-.bars .fill{height:100%;border-radius:99px;width:0;transition:width 1.4s var(--ease-spring)}
-.bars .fill.oxido{background:var(--oxido)}
-.bars .fill.cafe{background:var(--cafe)}
-.visible .bars .fill.f1{width:38%}
-.visible .bars .fill.f2{width:62%}
 .company-tags{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
 .company-tags span{border:2px solid var(--cafe);border-radius:99px;padding:10px 22px;font-size:22px;font-weight:600}
 
@@ -226,13 +216,11 @@ svg.sun{width:100%;height:100%}
    =========================================================== */
 .s-sources .copy{position:absolute;left:120px;top:130px;right:120px;bottom:120px}
 .s-sources h2{font-weight:500;font-size:80px;margin-bottom:44px}
-.s-sources .cols{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.s-sources .cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:56px}
 .s-sources h4{font-family:var(--display);font-weight:500;font-size:26px;color:var(--oxido);margin:0 0 16px}
 .s-sources ul{list-style:none;margin:0 0 30px;padding:0;font-size:21px;line-height:1.7;color:var(--cafe)}
 .s-sources li{border-bottom:1px solid var(--line);padding:10px 0}
 
-/* number badge reused across dividers */
-.n{font-family:var(--display);font-weight:800;font-size:56px;color:var(--oxido)}
 
 /* ===========================================================
    LIGHTBOX — cualquier foto del deck se puede tocar para verla
@@ -293,7 +281,6 @@ svg.sun{width:100%;height:100%}
 <!-- BLOQUE 1 · LA ERA DORADA (Integrante 1) -->
 <!-- ============================================================ -->
 <section class="slide s-lead">
-  <div class="who r d1">Integrante 1 · <span class="n" style="font-size:22px">01</span></div>
   <div class="head">
     <h2 class="r d2">La era<br><em>dorada</em></h2>
     <p class="lead-copy r d3">A principios de los 80, YPF no solo extraía petróleo: construía la ciudad entera alrededor del pozo.</p>
@@ -327,7 +314,6 @@ svg.sun{width:100%;height:100%}
 <!-- BLOQUE 2 · DEL ESTADO AL MERCADO (Integrante 2) -->
 <!-- ============================================================ -->
 <section class="slide s-lead">
-  <div class="who r d1">Integrante 2 · <span class="n" style="font-size:22px">02</span></div>
   <div class="head">
     <h2 class="r d2">Del Estado<br>al <em>mercado</em></h2>
     <p class="lead-copy r d3">En los años 90, YPF deja de ser estatal. El petróleo pasa a manos de empresas privadas, muchas de ellas extranjeras.</p>
@@ -349,18 +335,43 @@ svg.sun{width:100%;height:100%}
   </div>
   <div class="split" style="grid-template-columns:1fr 1fr">
     <div class="col r d3">
-      <div class="bars">
-        <div class="row"><div class="top"><span>Capital nacional</span><span>—</span></div><div class="track"><div class="fill oxido f1"></div></div></div>
-        <div class="row"><div class="top"><span>Capital extranjero</span><span>—</span></div><div class="track"><div class="fill cafe f2"></div></div></div>
-      </div>
-      <p style="font-size:19px;color:var(--muted);margin-top:8px">Proporción ilustrativa — completar con datos de la Secretaría de Energía.</p>
+      <div class="stat-card oxido" style="height:100%"><small>Repsol se queda con YPF</small><div class="num" style="font-size:110px">97,81%</div><p>de las acciones de YPF, adquiridas en dos tramos durante 1999.</p></div>
     </div>
     <div class="col r d4">
       <div class="company-tags">
         <span>Repsol · España</span><span>Total · Francia</span><span>Chevron · EE.UU.</span><span>Pan American · Arg./EE.UU.</span><span>Pluspetrol · Argentina</span>
       </div>
       <p style="font-size:24px;line-height:1.4;margin-top:28px;color:var(--muted)">Gran parte de las utilidades se repatría a las casas matrices, en lugar de reinvertirse en la región productora.</p>
-      <p style="font-size:22px;line-height:1.4;margin-top:20px;padding-top:20px;border-top:1px solid var(--line)">No es un caso aislado: en la misma década, Venezuela abre PDVSA al capital extranjero con la <b>Apertura Petrolera</b> (1992–2001) — Chevron y Total, entre otras, entran también a la Faja del Orinoco.</p>
+      <div style="margin-top:24px;padding:20px 26px;border-radius:14px;background:var(--sand);border-left:6px solid var(--oxido)">
+        <span style="font-family:var(--mono);font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--oxido-dk)">Contexto regional</span>
+        <p style="font-size:22px;line-height:1.4;margin:10px 0 0">No es un caso aislado: en la misma década, Venezuela abre PDVSA al capital extranjero con la <b>Apertura Petrolera</b> →</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CONTEXTO REGIONAL · VENEZUELA (no estaba en el guión original) -->
+<!-- ============================================================ -->
+<section class="slide">
+  <div class="head">
+    <h2 class="r d1">Mismo giro,<br>otro <em>país</em></h2>
+    <p class="lead-copy r d2">La apertura al capital extranjero no fue solo argentina: en los 90, Venezuela abre PDVSA con la <em>Apertura Petrolera</em>, aunque sin privatizar la empresa estatal.</p>
+  </div>
+  <div class="split" style="grid-template-columns:1fr 1fr">
+    <div class="col r d3">
+      <div class="stat-card sand" style="margin-bottom:22px"><small>Petrozuata · 1993</small><b style="display:block;font-family:var(--display);font-weight:500;font-size:34px;margin-top:14px">Conoco 50,1% · PDVSA 49,9%</b><p>Primera gran asociación de la Faja del Orinoco; operativa desde 2001.</p></div>
+      <div class="stat-card cafe" style="color:var(--slide-bg)"><small style="opacity:.7">Cerro Negro · 1997</small><b style="display:block;font-family:var(--display);font-weight:500;font-size:34px;margin-top:14px">PDVSA 42% · ExxonMobil 42% · BP 16%</b><p style="opacity:.85">Una de las asociaciones estratégicas más grandes de la Apertura.</p></div>
+    </div>
+    <div class="col r d4">
+      <div class="company-tags">
+        <span>Conoco · EE.UU.</span><span>ExxonMobil · EE.UU.</span><span>BP · Reino Unido</span><span>Total · Francia</span><span>Chevron · EE.UU.</span>
+      </div>
+      <p style="font-size:24px;line-height:1.4;margin-top:28px;color:var(--muted)">Para 1997, PDVSA facturaba unos <b>USD 35.000 M</b> al año y superaba los <b>3 millones de barriles diarios</b>.</p>
+      <div style="margin-top:24px;padding:20px 26px;border-radius:14px;background:var(--sand);border-left:6px solid var(--oxido)">
+        <span style="font-family:var(--mono);font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--oxido-dk)">La diferencia clave</span>
+        <p style="font-size:22px;line-height:1.4;margin:10px 0 0">PDVSA nunca se privatiza: el Estado retiene la mayoría en cada asociación. YPF, en cambio, la pierde por completo en 1999.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -369,15 +380,14 @@ svg.sun{width:100%;height:100%}
 <!-- BLOQUE 3 · CIUDAD FANTASMA (Integrante 3) -->
 <!-- ============================================================ -->
 <section class="slide s-lead">
-  <div class="who r d1">Integrante 3 · <span class="n" style="font-size:22px">03</span></div>
   <div class="head">
     <h2 class="r d2">Hacia la<br>ciudad <em>fantasma</em></h2>
     <p class="lead-copy r d3">La privatización trae despidos masivos y retiros "voluntarios". El pueblo que YPF construyó empieza a vaciarse.</p>
   </div>
   <div class="grid3" style="top:auto;height:420px">
-    <div class="stat-card cafe r stack d3"><small>Empleo</small><div class="num" style="font-size:100px">↓</div><p>Miles de puestos de YPF se pierden entre fines de los 80 y los 90.</p></div>
-    <div class="stat-card oxido r stack d4"><small>Comercio</small><div class="num" style="font-size:100px">↓</div><p>Sin sueldos estables, el comercio local se contrae y cierra.</p></div>
-    <div class="stat-card sand r stack d5"><small>Población</small><div class="num" style="font-size:100px">↓</div><p>Parte de las familias emigra buscando trabajo en otro lado.</p></div>
+    <div class="stat-card cafe r stack d3"><small>Empleo YPF, Cutral Có</small><div class="num" style="font-size:88px">3.600/4.200</div><p>puestos despedidos tras la privatización de 1992.</p></div>
+    <div class="stat-card oxido r stack d4"><small>Desocupación</small><div class="num" style="font-size:88px">3,6%→26%</div><p>entre 1992 y 1996, en Cutral Có y Plaza Huincul.</p></div>
+    <div class="stat-card sand r stack d5"><small>Sin trabajo</small><div class="num" style="font-size:88px">8.000</div><p>personas desocupadas hacia 1996, un cuarto de la población activa.</p></div>
   </div>
 </section>
 
@@ -398,7 +408,6 @@ svg.sun{width:100%;height:100%}
 <!-- BLOQUE 4 · GEOGRAFÍA AMBIENTAL (Integrante 4) -->
 <!-- ============================================================ -->
 <section class="slide s-lead">
-  <div class="who r d1">Integrante 4 · <span class="n" style="font-size:22px">04</span></div>
   <div class="head">
     <h2 class="r d2">Geografía<br><em>ambiental</em></h2>
     <p class="lead-copy r d3">Dos ecosistemas muy distintos —estepa patagónica y yungas salteñas— reciben la misma presión hidrocarburífera.</p>
@@ -425,7 +434,6 @@ svg.sun{width:100%;height:100%}
 <!-- BLOQUE 5 · RESISTENCIA Y ORIGEN PIQUETERO (Integrante 5) -->
 <!-- ============================================================ -->
 <section class="slide s-lead">
-  <div class="who r d1">Integrante 5 · <span class="n" style="font-size:22px">05</span></div>
   <div class="head">
     <h2 class="r d2">Cortar la ruta<br>para <em>existir</em></h2>
     <p class="lead-copy r d3">Sin fábrica que ocupar ni patrón a quien reclamarle, los vecinos usan lo único que tienen a mano: la ruta.</p>
@@ -498,10 +506,22 @@ svg.sun{width:100%;height:100%}
         </ul>
       </div>
       <div class="r d3">
-        <h4>Mapa y datos</h4>
+        <h4>Cifras · Argentina</h4>
+        <ul>
+          <li>Empleo YPF, desocupación y puebladas — <i>Puebladas de Cutral Có y Plaza Huincul</i>, Wikipedia</li>
+          <li>Ley 24.145 (1992) — retiros e indemnizaciones tras la privatización</li>
+          <li>97,81% de YPF a Repsol (1999) — La Nación / CNMV</li>
+        </ul>
+        <h4>Cifras · Venezuela</h4>
+        <ul>
+          <li>Apertura Petrolera y asociaciones estratégicas — <i>Faja petrolífera del Orinoco</i>, Wikipedia</li>
+          <li>Producción y facturación de PDVSA, 1997 — íd.</li>
+        </ul>
+      </div>
+      <div class="r d4">
+        <h4>Mapa</h4>
         <ul>
           <li>Contorno de Argentina — world.geo.json (datos geográficos abiertos)</li>
-          <li>Cifras de empresas, empleo y población: <b>a completar</b> por el grupo con fuentes oficiales (INDEC, Secretaría de Energía)</li>
         </ul>
         <h4>Herramientas</h4>
         <ul>
@@ -549,15 +569,16 @@ addEventListener('resize',fitStage); fitStage();
 const NOTES=[
 "Portada. Presentamos el trabajo: cuatro ciudades petroleras argentinas, desde el auge de YPF hasta las puebladas.",
 "Ubicamos las dos cuencas en el mapa: Neuquina (Cutral Có, Plaza Huincul) y Noroeste (Tartagal, Gral. Mosconi).",
-"Integrante 1: en los 80 YPF no solo daba trabajo, construía el pueblo entero alrededor del pozo — modelo 'company town'.",
+"En los 80 YPF no solo daba trabajo, construía el pueblo entero alrededor del pozo — modelo 'company town'.",
 "Detallamos los servicios que YPF sostenía: vivienda, hospital, escuela, clubes y colonias de vacaciones.",
-"Integrante 2: explicamos la Ley de Reforma del Estado de 1989 y el camino de YPF hacia la privatización en los 90.",
-"Mostramos qué empresas entraron a la cuenca y por qué gran parte de las ganancias se va fuera del país. Mismo patrón en Venezuela con la Apertura Petrolera de los 90.",
-"Integrante 3: los despidos masivos y retiros 'voluntarios' vacían el pueblo — cae el empleo, el comercio y la población.",
+"Explicamos la Ley de Reforma del Estado de 1989 y el camino de YPF hacia la privatización en los 90.",
+"Mostramos qué empresas entraron a la cuenca y por qué gran parte de las ganancias se va fuera del país.",
+"Mismo patrón en otro país: Venezuela abre PDVSA al capital extranjero con la Apertura Petrolera, aunque sin privatizarla del todo.",
+"Los despidos masivos y retiros 'voluntarios' vacían el pueblo — cae el empleo, el comercio y la población.",
 "Comparamos con la imagen antes/después: el mismo tipo de paisaje, activo vs. lo que queda cuando la empresa se retira.",
-"Integrante 4: dos ecosistemas distintos, estepa patagónica y yungas salteñas, reciben la misma presión hidrocarburífera.",
+"Dos ecosistemas distintos, estepa patagónica y yungas salteñas, reciben la misma presión hidrocarburífera.",
 "Repasamos los pasivos ambientales concretos: piletas de purga, fragmentación del hábitat y contaminación de napas.",
-"Integrante 5: sin fábrica ni patrón, los vecinos usan la ruta como herramienta de protesta — línea de tiempo 1996-2001.",
+"Sin fábrica ni patrón, los vecinos usan la ruta como herramienta de protesta — línea de tiempo 1996-2001.",
 "De esas puebladas nacen los MTD y las cooperativas: el germen del movimiento piquetero patagónico y salteño.",
 "Cerramos con la idea fuerza: una decisión económica reordena por completo la geografía, la sociedad y el ambiente.",
 "Fuentes y créditos de las fotos y los datos usados."
@@ -734,7 +755,7 @@ lightbox.addEventListener('click',closeLightbox);
     lbl.addEventListener('click',onTap); hit.addEventListener('click',onTap);
     return pin;
   }
-  const pins=[addPin(ARG_CITIES.neuquen,2),addPin(ARG_CITIES.salta,8)];
+  const pins=[addPin(ARG_CITIES.neuquen,2),addPin(ARG_CITIES.salta,9)];
 
   // encuadre robusto: caja/esfera envolvente real del grupo YA rotado,
   // en vez de trigonometría manual sobre la proyección.
