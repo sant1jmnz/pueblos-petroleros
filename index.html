@@ -233,6 +233,17 @@ svg.sun{width:100%;height:100%}
 
 /* number badge reused across dividers */
 .n{font-family:var(--display);font-weight:800;font-size:56px;color:var(--oxido)}
+
+/* ===========================================================
+   LIGHTBOX — cualquier foto del deck se puede tocar para verla
+   grande; Escape o click afuera cierra.
+   =========================================================== */
+.photo-card img{cursor:zoom-in}
+.lightbox{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;background:rgba(10,12,10,.9);opacity:0;pointer-events:none;transition:opacity .35s var(--ease)}
+.lightbox.open{opacity:1;pointer-events:auto}
+.lightbox img{max-width:88vw;max-height:86vh;border-radius:20px;box-shadow:0 40px 90px rgba(0,0,0,.5);transform:scale(.92);transition:transform .35s var(--ease-spring)}
+.lightbox.open img{transform:scale(1)}
+.lightbox .lb-close{position:absolute;top:32px;right:40px;font-family:var(--mono);font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:#F4F5EE;background:rgba(255,255,255,.12);padding:10px 20px;border-radius:99px;cursor:pointer}
 </style>
 </head>
 <body>
@@ -307,8 +318,8 @@ svg.sun{width:100%;height:100%}
   </div>
   <div class="grid3">
     <div class="stat-card oxido r stack d3"><small>Empleo</small><div class="num">100%</div><p>estatal: YPF era el principal —a veces único— empleador del pueblo.</p></div>
-    <div class="stat-card cafe r stack d4"><small>Servicios</small><div class="num">+</div><p>vivienda, salud y educación garantizadas por la empresa del Estado.</p></div>
-    <div class="stat-card sand r stack d5"><svg class="sun-mark" style="width:52px;height:52px"><use href="#sun"/></svg><p style="margin-top:auto">Clubes deportivos, cines y colonias de vacaciones completaban la vida del "campamento petrolero".</p></div>
+    <div class="stat-card cafe r stack d4"><small>Servicios</small><div class="num">+</div><p>vivienda, salud y educación garantizadas por la empresa del Estado, además de clubes, cines y colonias de vacaciones.</p></div>
+    <div class="photo-card zoom r stack d5"><img src="assets/torre.jpg" alt="Monumento a la torre petrolera en Ruta 22, Cutral Có"><span class="credit" style="left:20px;bottom:16px;background:rgba(4,6,8,.75);padding:6px 14px;border-radius:6px">Torre petrolera, Ruta 22</span></div>
   </div>
 </section>
 
@@ -349,6 +360,7 @@ svg.sun{width:100%;height:100%}
         <span>Repsol · España</span><span>Total · Francia</span><span>Chevron · EE.UU.</span><span>Pan American · Arg./EE.UU.</span><span>Pluspetrol · Argentina</span>
       </div>
       <p style="font-size:24px;line-height:1.4;margin-top:28px;color:var(--muted)">Gran parte de las utilidades se repatría a las casas matrices, en lugar de reinvertirse en la región productora.</p>
+      <p style="font-size:22px;line-height:1.4;margin-top:20px;padding-top:20px;border-top:1px solid var(--line)">No es un caso aislado: en la misma década, Venezuela abre PDVSA al capital extranjero con la <b>Apertura Petrolera</b> (1992–2001) — Chevron y Total, entre otras, entran también a la Faja del Orinoco.</p>
     </div>
   </div>
 </section>
@@ -441,7 +453,7 @@ svg.sun{width:100%;height:100%}
     <p class="lead-copy r d2">De esas puebladas nacen las primeras estructuras propias de los desocupados.</p>
   </div>
   <div class="split">
-    <div class="col r d3"><div class="photo-card zoom" style="aspect-ratio:4/3"><img src="assets/bloqueo.jpg" alt="Corte de ruta en Argentina"></div></div>
+    <div class="col r d3"><div class="photo-card zoom" style="aspect-ratio:4/3"><img src="assets/bloqueo.jpg" alt="Quema de neumáticos en un corte de ruta, Argentina"></div></div>
     <div class="col r d4">
       <ul>
         <li>Los cortes se organizan por asamblea, no por sindicato ni partido.</li>
@@ -476,11 +488,12 @@ svg.sun{width:100%;height:100%}
         <h4>Fotografías</h4>
         <ul>
           <li>Tanques YPF, Plaza Huincul — Wikimedia Commons</li>
+          <li>Torre petrolera, Ruta 22, Cutral Có — Wikimedia Commons</li>
           <li>Avenida San Martín, Plaza Huincul — Wikimedia Commons</li>
           <li>Estepa patagónica — Wikimedia Commons</li>
           <li>Yungas, Jujuy — Wikimedia Commons</li>
           <li>Ruta Nacional 22, Neuquén — Wikimedia Commons</li>
-          <li>Corte de ruta, Argentina — Wikimedia Commons</li>
+          <li>Quema de neumáticos, corte de ruta — P. M. Longo, Wikimedia Commons (CC BY 3.0)</li>
           <li>Ruinas de asentamiento, Plaza Huincul — Wikimedia Commons</li>
         </ul>
       </div>
@@ -513,8 +526,9 @@ svg.sun{width:100%;height:100%}
   <span style="--x:91%;--dur:12.5s;--delay:4.2s"></span>
 </div>
 <div class="chrome"><span class="count" id="count">1 / 15</span><div class="progress"><i id="prog"></i></div></div>
-<div id="helpTip">← → avanzar · M mapa · N notas · P imprimir/PDF</div>
+<div id="helpTip">← → avanzar · M mapa · N notas · click en foto agranda · P imprimir/PDF</div>
 <div id="notesPanel"><span class="close" id="notesClose">cerrar (N)</span><h4>Notas del orador</h4><p id="notesText"></p></div>
+<div class="lightbox" id="lightbox"><span class="lb-close">cerrar (Esc)</span><img id="lightboxImg" src="" alt=""></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="assets/arg_data.js"></script>
@@ -538,7 +552,7 @@ const NOTES=[
 "Integrante 1: en los 80 YPF no solo daba trabajo, construía el pueblo entero alrededor del pozo — modelo 'company town'.",
 "Detallamos los servicios que YPF sostenía: vivienda, hospital, escuela, clubes y colonias de vacaciones.",
 "Integrante 2: explicamos la Ley de Reforma del Estado de 1989 y el camino de YPF hacia la privatización en los 90.",
-"Mostramos qué empresas entraron a la cuenca y por qué gran parte de las ganancias se va fuera del país.",
+"Mostramos qué empresas entraron a la cuenca y por qué gran parte de las ganancias se va fuera del país. Mismo patrón en Venezuela con la Apertura Petrolera de los 90.",
 "Integrante 3: los despidos masivos y retiros 'voluntarios' vacían el pueblo — cae el empleo, el comercio y la población.",
 "Comparamos con la imagen antes/después: el mismo tipo de paisaje, activo vs. lo que queda cuando la empresa se retira.",
 "Integrante 4: dos ecosistemas distintos, estepa patagónica y yungas salteñas, reciben la misma presión hidrocarburífera.",
@@ -578,6 +592,7 @@ function go(n){
 }
 document.addEventListener('keydown',e=>{
   if(e.target && e.target.isContentEditable) return;
+  if(e.key==='Escape' && lightbox.classList.contains('open')){ closeLightbox(); return; }
   if(['ArrowRight',' ','PageDown'].includes(e.key)){e.preventDefault();go(i+1);}
   else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(i-1);}
   else if(e.key==='n'||e.key==='N'){toggleNotes();}
@@ -588,10 +603,21 @@ let touchX=null;
 addEventListener('touchstart',e=>touchX=e.touches[0].clientX,{passive:true});
 addEventListener('touchend',e=>{ if(touchX===null)return; const dx=e.changedTouches[0].clientX-touchX; if(Math.abs(dx)>60) go(dx<0?i+1:i-1); touchX=null; },{passive:true});
 document.addEventListener('click',e=>{
-  if(e.target.closest('#notesPanel,.compare,.chrome,#helpTip,.stage3d .lbl,.stage3d .hit'))return;
+  if(e.target.closest('#notesPanel,.compare,.chrome,#helpTip,.stage3d .lbl,.stage3d .hit,.photo-card,.lightbox'))return;
   go(e.clientX>innerWidth/2?i+1:i-1);
 });
 go(0);
+
+/* ===========================================================
+   LIGHTBOX — tocar cualquier foto del deck la agranda
+   =========================================================== */
+const lightbox=document.getElementById('lightbox'), lightboxImg=document.getElementById('lightboxImg');
+function openLightbox(img){ lightboxImg.src=img.src; lightboxImg.alt=img.alt; lightbox.classList.add('open'); }
+function closeLightbox(){ lightbox.classList.remove('open'); }
+document.querySelectorAll('.photo-card img').forEach(img=>{
+  img.addEventListener('click',e=>{ e.stopPropagation(); openLightbox(img); });
+});
+lightbox.addEventListener('click',closeLightbox);
 
 /* ===========================================================
    ANTES / DESPUÉS ARRASTRABLE (slide "el mismo lugar")
