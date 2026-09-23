@@ -972,15 +972,19 @@ lightbox.addEventListener('click',closeLightbox);
   function addPin(city,targetId){
     const [px,py]=project(city.pos[0],city.pos[1]);
     const g=new THREE.Group();
-    const cone=new THREE.Mesh(new THREE.ConeGeometry(.11,.4,16), new THREE.MeshStandardMaterial({color:0xA6402A,roughness:.55}));
-    cone.position.z=PINZ+.2; cone.rotation.x=Math.PI; g.add(cone);
+    // chinche parada: el eje del cono (Y) se lleva a Z, la normal de la placa, con la punta clavada
+    const pinMat=new THREE.MeshStandardMaterial({color:0xA6402A,roughness:.5});
+    const cone=new THREE.Mesh(new THREE.ConeGeometry(.07,.42,16), pinMat);
+    cone.position.z=PINZ+.21; cone.rotation.x=-Math.PI/2; g.add(cone);
+    const head=new THREE.Mesh(new THREE.SphereGeometry(.13,20,14), pinMat);
+    head.position.z=PINZ+.46; g.add(head);
     const ring=new THREE.Mesh(new THREE.RingGeometry(.14,.19,32), new THREE.MeshBasicMaterial({color:0xA6402A,transparent:true,opacity:.55,side:THREE.DoubleSide}));
     ring.position.z=PINZ+.01; g.add(ring);
     g.position.set(px,py,0);
     group.add(g);
     const lbl=document.createElement('div'); lbl.className='lbl'; lbl.textContent=city.name; labelWrap.appendChild(lbl);
     const hit=document.createElement('div'); hit.className='hit'; labelWrap.appendChild(hit);
-    const pin={g,ring,lbl,hit,world:new THREE.Vector3(px,py,PINZ+.6),center:new THREE.Vector3(px,py,PINZ+.18)};
+    const pin={g,ring,lbl,hit,world:new THREE.Vector3(px,py,PINZ+.7),center:new THREE.Vector3(px,py,PINZ+.18)};
     const onTap=e=>{ e.stopPropagation(); go(idx(targetId)); };
     lbl.addEventListener('click',onTap); hit.addEventListener('click',onTap);
     return pin;
