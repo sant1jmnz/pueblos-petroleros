@@ -223,7 +223,6 @@ svg.sun{width:100%;height:100%}
 .ptl .ev.on .txt p{color:rgba(243,244,238,.85)}
 .ptl .ev.on::before{background:var(--oxido);border-color:var(--oxido);transform:scale(1.3)}
 .ptl .ev.on .pic img{filter:none}
-.ctl{position:absolute;right:120px;top:318px;display:flex;gap:10px;z-index:4}
 .btn{font-family:var(--mono);font-size:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:1.5px solid var(--cafe);background:transparent;color:var(--cafe);padding:9px 18px;border-radius:99px;cursor:pointer;display:inline-flex;align-items:center;gap:10px}
 .btn:hover{background:var(--cafe);color:var(--slide-bg)}
 .btn .ic{width:0;height:0;border-left:11px solid currentColor;border-top:7px solid transparent;border-bottom:7px solid transparent}
@@ -349,7 +348,6 @@ svg.sun{width:100%;height:100%}
     <h2 class="r d1">Primero el pozo,<br>después el <em>pueblo</em></h2>
     <p class="lead-copy r d2">Ninguna de estas ciudades existía antes del petróleo: nacieron alrededor de los pozos que perforaba el Estado.</p>
   </div>
-  <div class="ctl r d2"><button class="btn playing" data-ptl-toggle><span class="ic"></span><span class="lbl">Pausa</span></button></div>
   <div class="ptl" style="--n:5"><div class="bar"></div>
     <div class="ev r d3"><div class="pic"><img src="assets/img/primer_pozo_cr.jpg" alt="Primer pozo de petróleo de Comodoro Rivadavia, 1907"></div><div class="txt"><div class="yr">1907</div><b>Comodoro Rivadavia</b><p>Buscando agua, aparece petróleo: el primer pozo del país.</p></div></div>
     <div class="ev r d4"><div class="pic"><img src="assets/img/pozo8.jpg" alt="Surgencia del Pozo N°8 de Plaza Huincul, 1925" style="object-position:50% 30%"></div><div class="txt"><div class="yr">1918</div><b>Plaza Huincul</b><p>El Pozo N°1 da petróleo en plena estepa neuquina.</p></div></div>
@@ -617,7 +615,6 @@ svg.sun{width:100%;height:100%}
     <h2 class="r d1">Las<br><em>puebladas</em></h2>
     <p class="lead-copy r d2">Del sur al norte, el corte de ruta se vuelve la herramienta de los que se quedaron sin trabajo.</p>
   </div>
-  <div class="ctl r d2"><button class="btn playing" data-ptl-toggle><span class="ic"></span><span class="lbl">Pausa</span></button></div>
   <div class="ptl" style="--n:6;gap:16px"><div class="bar"></div>
     <div class="ev r d3"><div class="pic"><img src="assets/ruta22.jpg" alt="Ruta Nacional 22, Neuquén"></div><div class="txt"><div class="yr">Jun 1996</div><b>Cutral Có · Huincul</b><p>~20.000 personas cortan la Ruta 22 durante una semana.</p></div></div>
     <div class="ev r d4"><div class="pic"><img src="assets/img/teresa_vive.jpg" alt="Mural Teresa Vive, Cutral Có"></div><div class="txt"><div class="yr">Abr 1997</div><b>Teresa Rodríguez</b><p>Segunda pueblada: la policía la mata. Tenía 24 años.</p></div></div>
@@ -832,22 +829,17 @@ document.addEventListener('click',e=>{
 document.addEventListener('pointerup',()=>{ if(document.activeElement && document.activeElement!==document.body) document.activeElement.blur(); });
 setTimeout(()=>document.getElementById('helpTip').classList.add('fade'),9000);
 
-/* LÍNEA DE TIEMPO CON FOTOS — avanza sola; tocar un hito salta ahí */
+/* LÍNEA DE TIEMPO CON FOTOS — avanza sola; tocar un hito la frena ahí */
 function startTimeline(ptl,slide){
   const evs=[...ptl.querySelectorAll('.ev')], bar=ptl.querySelector('.bar');
-  const btn=slide.querySelector('[data-ptl-toggle]');
   let k=-1, timer=null;
   const show=n=>{ k=n; evs.forEach((e,j)=>e.classList.toggle('on',j===k)); bar.style.width=((k+.5)/evs.length*100)+'%'; };
-  const setBtn=on=>{ if(!btn)return; btn.classList.toggle('playing',on); btn.querySelector('.lbl').textContent=on?'Pausa':'Reproducir'; };
-  const play=()=>{ clearInterval(timer); timer=setInterval(()=>show((k+1)%evs.length),3200); setBtn(true); };
-  const pause=()=>{ clearInterval(timer); timer=null; setBtn(false); };
-  const onEv=e=>{ const n=evs.indexOf(e.currentTarget); pause(); show(n); };
-  const onBtn=()=> timer?pause():play();
+  const play=()=>{ clearInterval(timer); timer=setInterval(()=>show((k+1)%evs.length),3200); };
+  const onEv=e=>{ clearInterval(timer); show(evs.indexOf(e.currentTarget)); };
   evs.forEach(e=>{ e.classList.remove('on'); e.addEventListener('click',onEv); });
   bar.style.width='0';
-  btn&&btn.addEventListener('click',onBtn);
   const t0=setTimeout(()=>{ show(0); play(); },1300);
-  return ()=>{ clearTimeout(t0); clearInterval(timer); evs.forEach(e=>e.removeEventListener('click',onEv)); btn&&btn.removeEventListener('click',onBtn); };
+  return ()=>{ clearTimeout(t0); clearInterval(timer); evs.forEach(e=>e.removeEventListener('click',onEv)); };
 }
 
 /* WAFFLE — 100 figuras = 51.000 trabajadores; se apagan 89 */
