@@ -9,7 +9,7 @@ Grupo: Carratu Juan · Casero Bautista · Jimenez Santiago · Noguera Gabriel ·
 ## Uso
 
 - `←` `→` avanzar · `M` mapa · `N` notas del orador · `P` imprimir/PDF
-- Guion por capítulo (5 partes parejas, ~2 min c/u): [GUION.md](GUION.md)
+- Guion por capítulo (5 partes parejas, ~4 min c/u): [GUION.md](GUION.md)
 - Tocar una foto la agranda; las tarjetas de "Datos curiosos" y la tercera de la slide 23 se dan vuelta.
 
 ## Aclaración: slide 23
