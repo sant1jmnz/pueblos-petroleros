@@ -9,9 +9,10 @@ Grupo: Carratu Juan · Casero Bautista · Jimenez Santiago · Noguera Gabriel ·
 ## Uso
 
 - `←` `→` avanzar · `M` mapa · `N` notas del orador · `P` imprimir/PDF
-- Tocar una foto la agranda; las tarjetas de "Datos curiosos" y la tercera de la slide 13 se dan vuelta.
+- Guion por capítulo (5 partes parejas, ~2 min c/u): [GUION.md](GUION.md)
+- Tocar una foto la agranda; las tarjetas de "Datos curiosos" y la tercera de la slide 23 se dan vuelta.
 
-## Aclaración: slide 13
+## Aclaración: slide 23
 
 La "foto actualizada" de Cristina Fernández de Kirchner tras las rejas es un **montaje hecho con IA**, en chiste. No es una foto real. En la realidad, la Corte Suprema confirmó el 10 de junio de 2025 su condena en la causa Vialidad y cumple **prisión domiciliaria** con tobillera electrónica.
 
