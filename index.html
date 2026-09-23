@@ -31,83 +31,79 @@ img,video,canvas,svg{max-width:100%;max-height:100%}
    DESIGN SYSTEM — una sola paleta, una sola familia tipográfica
    Estepa patagónica: cielo ventoso y gris, pasto seco y suelo
    ocre polvoriento, roca basáltica oscura como tinta — y un
-   único acento, el óxido rojizo de la chapa y la tierra
-   ferrosa. Nada de crema cálido ni de negro-SaaS: fría, clara,
-   con un solo color que se gasta con cuidado.
+   único acento, el óxido rojizo de la chapa y la tierra ferrosa.
    =========================================================== */
 :root{
   --stage-bg:#DCDFD6; --slide-bg:#F3F4EE; --sand:#D7CCA7; --sand-2:#C8BA8D;
-  --cafe:#262E29; --cafe-2:#141D18; --oxido:#A6402A; --oxido-dk:#7A2E1C; --sienna:#5B6357;
-  --muted:#6E7669; --line:rgba(38,46,41,.15);
+  --cafe:#262E29; --cafe-2:#141D18; --oxido:#A6402A; --oxido-dk:#7A2E1C; --oxido-lt:#EE8563; --sienna:#5B6357;
+  --muted:#5F675B; --line:rgba(38,46,41,.15);
   --ease:cubic-bezier(.16,1,.3,1); --ease-spring:cubic-bezier(.2,1.3,.3,1);
   --display:'Big Shoulders Display',sans-serif; --sans:'IBM Plex Sans',sans-serif; --mono:'IBM Plex Mono',monospace;
 }
 .slide{font-family:var(--sans);color:var(--cafe)}
 h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.01em;font-weight:800}
 em{font-style:normal;font-weight:400;color:var(--oxido)}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;border:1.5px solid var(--cafe);border-radius:6px;padding:8px 22px;font-family:var(--mono);font-size:18px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;border:1.5px solid currentColor;border-radius:6px;padding:8px 22px;font-family:var(--mono);font-size:18px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
 .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--oxido)}
 .credit{position:absolute;font-family:var(--mono);font-size:15px;color:#F4F5EE;font-weight:500;letter-spacing:.02em}
+.photo-card .credit{left:18px;bottom:16px;background:rgba(4,6,8,.78);padding:6px 14px;border-radius:6px;pointer-events:none}
 
-/* sol decorativo (motivo recurrente, tomado de la referencia de Canva) */
 svg.sun{width:100%;height:100%}
 .sun-mark{color:var(--oxido)}
 
-/* mancha orgánica decorativa (Canva) */
-.blob{position:absolute;color:var(--cafe);opacity:.9}
-
-/* tarjetas de foto redondeadas (Canva) */
+/* tarjetas de foto redondeadas */
 .photo-card{border-radius:36px;overflow:hidden;position:relative;background:var(--sand-2)}
-.photo-card img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;max-width:none;max-height:none}
 
 /* tarjeta de dato / estadística */
-.stat-card{border-radius:14px;padding:40px 44px;display:flex;flex-direction:column;justify-content:space-between;box-sizing:border-box;border:1px solid var(--line)}
+.stat-card{border-radius:14px;padding:40px 44px;display:flex;flex-direction:column;justify-content:space-between;box-sizing:border-box;border:1px solid var(--line);overflow:hidden}
 .stat-card.oxido{background:var(--oxido);color:var(--slide-bg);border-color:transparent}
 .stat-card.cafe{background:var(--cafe);color:var(--slide-bg);border-color:transparent}
 .stat-card.sand{background:var(--sand)}
-.stat-card small{font-family:var(--mono);font-size:17px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.stat-card small{font-family:var(--mono);font-size:17px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
 .stat-card .num{font-family:var(--display);font-weight:800;font-size:120px;line-height:.9;letter-spacing:-.02em;margin-top:14px}
 .stat-card p{font-size:26px;line-height:1.35;margin:16px 0 0;font-weight:400}
+.stat-card .card-img{margin:-40px -44px 24px;height:330px;overflow:hidden;position:relative;flex:none}
+.stat-card .card-img img{width:100%;height:100%;object-fit:cover;max-width:none;max-height:none;cursor:zoom-in}
+.stat-card .card-img .credit{left:16px;bottom:12px;background:rgba(4,6,8,.75);padding:4px 12px;border-radius:6px;font-size:13px}
 
-/* pill / tag */
 .tag{border:1.5px solid var(--cafe);border-radius:99px;padding:9px 20px;font-family:var(--mono);font-size:19px;font-weight:600;display:inline-block}
-.tag.fill{background:var(--cafe);color:var(--slide-bg);border-color:var(--cafe)}
 
-/* chrome global (fuera de la caja de la diapositiva) */
-.chrome{position:fixed;left:0;right:0;bottom:22px;z-index:1000;display:flex;justify-content:center;align-items:center;gap:18px;pointer-events:none;font-family:var(--sans)}
+/* chrome global (fuera de la caja de la diapositiva) — contador a la izquierda */
+.chrome{position:fixed;left:22px;bottom:22px;z-index:1000;display:flex;align-items:center;gap:14px;pointer-events:none;font-family:var(--sans)}
 .chrome *{pointer-events:auto}
-.progress{width:min(50vw,560px);height:3px;background:var(--line);border-radius:99px;overflow:hidden}
+.progress{width:min(30vw,340px);height:3px;background:rgba(38,46,41,.18);border-radius:99px;overflow:hidden}
 .progress i{display:block;height:100%;background:var(--oxido);border-radius:99px;transition:width .5s var(--ease)}
-.count{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--cafe);letter-spacing:.08em;background:rgba(243,244,238,.9);padding:6px 12px;border-radius:6px}
-#helpTip{position:fixed;right:20px;bottom:20px;z-index:1000;font-family:var(--mono);font-size:12px;color:var(--muted);background:rgba(243,244,238,.9);padding:8px 14px;border-radius:6px;transition:opacity .4s}
+.count{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--cafe);letter-spacing:.08em;background:rgba(243,244,238,.92);padding:6px 12px;border-radius:6px}
+#helpTip{position:fixed;right:20px;bottom:20px;z-index:1000;font-family:var(--mono);font-size:12px;color:var(--muted);background:rgba(243,244,238,.92);padding:8px 14px;border-radius:6px;transition:opacity .6s}
+#helpTip.fade{opacity:0}
 
 /* panel de notas del orador (tecla N) */
 #notesPanel{position:fixed;left:0;right:0;bottom:0;max-height:32vh;overflow:auto;background:var(--cafe-2);color:#DCE4E2;z-index:1100;padding:28px 64px;transform:translateY(100%);transition:transform .4s var(--ease);font-family:var(--sans);border-top:1px solid var(--line)}
 #notesPanel.open{transform:translateY(0)}
-#notesPanel h4{font-family:var(--mono);font-weight:600;font-size:16px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 10px;color:var(--oxido)}
+#notesPanel h4{font-family:var(--mono);font-weight:600;font-size:16px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 10px;color:var(--oxido-lt)}
 #notesPanel p{font-size:19px;line-height:1.6;margin:0;max-width:1400px}
-#notesPanel .close{position:absolute;top:18px;right:28px;font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);cursor:pointer}
+#notesPanel .close{position:absolute;top:18px;right:28px;font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#9AA29A;cursor:pointer}
 
 /* ===========================================================
-   REVEAL — entradas suaves, respetan prefers-reduced-motion
+   REVEAL — entradas suaves
    =========================================================== */
 .r{opacity:0;transform:translateY(44px);filter:blur(6px);transition:opacity 1s var(--ease),transform 1.1s var(--ease),filter .9s var(--ease)}
 .visible .r{opacity:1;transform:none;filter:none}
 .zoom img{transform:scale(1.1);transition:transform 3s var(--ease)}
 .visible .zoom img{transform:scale(1);animation:kenburns 18s ease-in-out 3s infinite alternate}
-@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.055)}}
-.d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}.d4{transition-delay:.38s}.d5{transition-delay:.48s}.d6{transition-delay:.58s}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.06)}}
+.d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}.d4{transition-delay:.38s}.d5{transition-delay:.48s}.d6{transition-delay:.58s}.d7{transition-delay:.68s}.d8{transition-delay:.78s}.d9{transition-delay:.88s}
 
-/* vida ambiente: soles decorativos giran despacio, tarjetas responden al hover */
 @keyframes spin-slow{to{transform:rotate(360deg)}}
-.suns svg,.stat-card .sun-mark{animation:spin-slow 44s linear infinite}
+.suns svg{animation:spin-slow 44s linear infinite}
 .stat-card,.photo-card,.s-map .card{transition:opacity 1s var(--ease),transform 1.1s var(--ease),filter .9s var(--ease),box-shadow .4s var(--ease);transform-style:preserve-3d}
 .stat-card:hover,.photo-card:hover,.s-map .card:hover{box-shadow:0 26px 50px rgba(38,46,41,.22),0 0 28px rgba(166,64,42,.12)}
-.photo-card img{filter:saturate(.92) contrast(1.04)}
+.photo-card img{filter:saturate(.95) contrast(1.04)}
 .company-tags span,.tag{transition:transform .4s var(--ease-spring)}
 .company-tags span:hover,.tag:hover{transform:translateY(-3px)}
 
-/* polvo al viento: la estepa nunca está del todo quieta */
+/* polvo al viento */
 .embers{position:fixed;inset:0;pointer-events:none;z-index:5;overflow:hidden}
 .embers span{position:absolute;left:var(--x,50%);bottom:18%;width:4px;height:4px;border-radius:50%;background:var(--oxido);opacity:0;animation:dust-drift var(--dur,14s) ease-in-out infinite;animation-delay:var(--delay,0s)}
 @keyframes dust-drift{0%{transform:translate(0,0) rotate(0deg);opacity:0}10%{opacity:.55}50%{transform:translate(160px,-70px) rotate(200deg);opacity:.4}90%{opacity:.22}100%{transform:translate(340px,-30px) rotate(380deg);opacity:0}}
@@ -115,30 +111,33 @@ svg.sun{width:100%;height:100%}
 .eyebrow .dot{animation:flicker 3.1s ease-in-out infinite}
 
 /* ===========================================================
-   SLIDE 1 · PORTADA
+   PORTADA — collage auge / abandono
    =========================================================== */
 .s-cover .copy{position:absolute;left:120px;top:0;bottom:0;width:860px;display:flex;flex-direction:column;justify-content:center}
-.s-cover h1{font-weight:800;font-size:196px;line-height:.87;font-variation-settings:"opsz" 144}
+.s-cover h1{font-weight:800;font-size:196px;line-height:.87}
 .s-cover .sub{font-size:32px;line-height:1.4;margin-top:38px;max-width:660px;color:var(--muted)}
 .s-cover .suns{display:flex;gap:16px;margin-top:52px}
 .s-cover .suns svg{width:52px;height:52px}
 .s-cover .meta{position:absolute;left:120px;bottom:76px;max-width:860px;font-size:20px;line-height:1.6;color:var(--muted);font-weight:500}
 .s-cover .meta b{color:var(--cafe);font-weight:600}
-.s-cover .photo{position:absolute;right:96px;top:96px;bottom:96px;width:740px}
-.s-cover .photo .credit{left:26px;bottom:24px;background:rgba(4,6,8,.78);border-radius:6px;padding:8px 20px}
+.s-cover .collage{position:absolute;right:96px;top:80px;bottom:80px;width:800px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1.55fr) minmax(0,1fr);gap:18px}
+.s-cover .collage .photo-card:first-child{grid-column:span 2}
+.s-cover .collage .photo-card{border-radius:28px}
 
 /* ===========================================================
-   SLIDE 2 · MAPA (contenedor three.js)
+   MAPA 3D
    =========================================================== */
 .s-map .copy{position:absolute;left:120px;top:120px;width:640px;z-index:3}
 .s-map h2{font-weight:500;font-size:96px;line-height:.98}
 .s-map .basin{display:grid;gap:20px;margin-top:44px}
-.s-map .card{border-radius:28px;padding:30px 34px}
+.s-map .card{border-radius:28px;padding:22px 26px;display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:center}
+.s-map .card .thumb{width:150px;height:150px;border-radius:18px;overflow:hidden}
+.s-map .card .thumb img{width:100%;height:100%;object-fit:cover;max-width:none;max-height:none}
 .s-map .card.sand{background:var(--sand)}
-.s-map .card.cafe{background:var(--cafe)}
+.s-map .card.cafe{background:var(--cafe);color:var(--slide-bg)}
 .s-map .card small{font-size:18px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
-.s-map .card b{display:block;font-family:var(--display);font-weight:500;font-size:38px;margin-top:12px}
-.s-map .card span{display:block;font-size:22px;margin-top:8px;opacity:.85}
+.s-map .card b{display:block;font-family:var(--display);font-weight:500;font-size:38px;margin-top:8px}
+.s-map .card span{display:block;font-size:22px;margin-top:6px;opacity:.85}
 .s-map .stage3d{position:absolute;right:0;top:0;width:1240px;height:1080px}
 .s-map .stage3d canvas{display:block;width:100%!important;height:100%!important}
 .s-map .stage3d .lbl{position:absolute;transform:translate(-50%,-120%);font-family:var(--mono);font-size:18px;font-weight:600;color:var(--cafe);background:rgba(243,244,238,.92);border:1px solid rgba(38,46,41,.12);border-radius:6px;padding:7px 16px;white-space:nowrap;pointer-events:auto;cursor:pointer;transition:opacity .3s,transform .3s var(--ease-spring),background .3s}
@@ -148,46 +147,127 @@ svg.sun{width:100%;height:100%}
 @keyframes hit-pulse{0%,100%{box-shadow:0 0 0 4px rgba(166,64,42,.1)}50%{box-shadow:0 0 0 10px rgba(166,64,42,.2)}}
 
 /* ===========================================================
-   PATRÓN · DIVISOR DE INTEGRANTE (encabezado de cada bloque)
+   ENCABEZADO de cada diapositiva
    =========================================================== */
-.head{position:absolute;left:120px;top:104px;right:120px;display:flex;justify-content:space-between;align-items:flex-start}
-.head h2{font-weight:500;font-size:118px;line-height:.92}
-.lead-copy{width:560px;font-size:29px;line-height:1.4;color:var(--muted);margin:0}
+.head{position:absolute;left:120px;top:96px;right:120px;display:flex;justify-content:space-between;align-items:flex-start;gap:60px}
+.head h2{font-weight:500;font-size:112px;line-height:.92}
+.lead-copy{width:620px;font-size:28px;line-height:1.4;color:var(--muted);margin:0}
 
-/* ===========================================================
-   COMPONENTE · SPLIT foto/texto 50-50
-   =========================================================== */
-.split{position:absolute;left:120px;right:120px;bottom:96px;top:400px;display:grid;grid-template-columns:1fr 1fr;gap:56px}
-.split .col{display:flex;flex-direction:column;justify-content:center}
+/* SPLIT foto/texto */
+.split{position:absolute;left:120px;right:120px;bottom:96px;top:380px;display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.split .col{display:flex;flex-direction:column;justify-content:center;min-height:0}
 .split ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:26px}
 .split li{font-size:28px;line-height:1.4;padding-left:34px;position:relative}
 .split li::before{content:"";position:absolute;left:0;top:14px;width:14px;height:14px;border-radius:50%;background:var(--oxido)}
 
-/* ===========================================================
-   COMPONENTE · grid de tarjetas (3)
-   =========================================================== */
-.grid3{position:absolute;left:120px;right:120px;bottom:120px;top:400px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
-/* entrada "mazo de cartas": las 3 tarjetas llegan apiladas/giradas y se acomodan en grilla */
+/* grid de tarjetas (3) — entrada "mazo de cartas" */
+.grid3{position:absolute;left:120px;right:120px;bottom:110px;top:380px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
 .grid3 .stack{transform:translateY(50px) rotate(var(--rot,0deg)) scale(.9)}
 .visible .grid3 .stack{transform:none}
 .grid3 .stack:nth-child(1){--rot:-5deg}
 .grid3 .stack:nth-child(2){--rot:2deg}
 .grid3 .stack:nth-child(3){--rot:5deg}
 
-/* ===========================================================
-   COMPONENTE · barra comparativa (nacional vs extranjero)
-   =========================================================== */
-.company-tags{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.company-tags{display:flex;flex-wrap:wrap;gap:12px}
 .company-tags span{border:2px solid var(--cafe);border-radius:99px;padding:10px 22px;font-size:22px;font-weight:600}
+.note{padding:20px 26px;border-radius:14px;background:var(--sand);border-left:6px solid var(--oxido)}
+.note span{font-family:var(--mono);font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--oxido-dk)}
+.note p{font-size:22px;line-height:1.4;margin:10px 0 0}
 
 /* ===========================================================
-   COMPONENTE · antes / después arrastrable
+   HERO — foto a sangre completa, portadilla de cada capítulo
    =========================================================== */
-.compare{position:absolute;left:120px;right:120px;top:400px;bottom:96px;border-radius:40px;overflow:hidden}
+.hero{background:#10140F;color:#F3F4EE}
+.hero>.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none;max-height:none;transform:scale(1.14);transition:transform 7s var(--ease)}
+.hero.visible>.bg{transform:scale(1.02)}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,16,13,.92) 0%,rgba(12,16,13,.66) 42%,rgba(12,16,13,.12) 100%),linear-gradient(0deg,rgba(12,16,13,.7) 0%,rgba(12,16,13,0) 45%)}
+.hero .hero-copy{position:absolute;left:120px;bottom:150px;width:1150px}
+.hero .chapter{font-family:var(--mono);font-size:22px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--oxido-lt)}
+.hero h2{font-size:200px;line-height:.86;font-weight:800;margin-top:22px}
+.hero em{color:var(--oxido-lt)}
+.hero p{font-size:34px;line-height:1.4;max-width:900px;margin:34px 0 0;color:rgba(243,244,238,.88)}
+.hero .cap{position:absolute;right:48px;top:40px;font-family:var(--mono);font-size:15px;color:rgba(243,244,238,.75);background:rgba(12,16,13,.55);padding:6px 14px;border-radius:6px}
+.glass-row{position:absolute;left:120px;right:120px;bottom:110px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.glass{border-radius:18px;padding:30px 36px;background:rgba(16,20,17,.62);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(243,244,238,.16)}
+.glass small{font-family:var(--mono);font-size:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--oxido-lt)}
+.glass .num{font-family:var(--display);font-weight:800;font-size:96px;line-height:.95;margin-top:10px}
+.glass p{font-size:23px;line-height:1.35;margin:10px 0 0;color:rgba(243,244,238,.85)}
+.hero.top .hero-copy{bottom:auto;top:110px}
+
+/* ===========================================================
+   MOSAICO de fotos
+   =========================================================== */
+.mosaic{position:absolute;left:120px;right:120px;top:370px;bottom:100px;display:grid;gap:18px;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,minmax(0,1fr))}
+.mosaic .photo-card{border-radius:22px;min-height:0}
+.mosaic .big{grid-column:span 2;grid-row:span 2}
+.mosaic .wide{grid-column:span 2}
+.mosaic .tall{grid-row:span 2}
+
+/* ===========================================================
+   LÍNEA DE TIEMPO CON FOTOS — se recorre sola; cada hito se toca
+   =========================================================== */
+.ptl{position:absolute;left:120px;right:120px;top:380px;bottom:100px;display:grid;grid-template-columns:repeat(var(--n,5),1fr);grid-template-rows:100%;gap:20px}
+.ptl::before{content:"";position:absolute;left:0;right:0;top:-26px;height:3px;background:var(--line)}
+.ptl .bar{position:absolute;left:0;top:-26px;height:3px;background:var(--oxido);width:0;transition:width .8s var(--ease)}
+.ptl .ev{position:relative;min-height:0;display:flex;flex-direction:column;background:#fff;border-radius:22px;overflow:hidden;border:1px solid var(--line);cursor:pointer;transition:opacity 1s var(--ease),transform .6s var(--ease-spring),filter .9s var(--ease),box-shadow .4s,background .4s}
+.ptl .ev::before{content:"";position:absolute;left:50%;top:-34px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:var(--slide-bg);border:3px solid var(--sand-2);transition:.4s}
+.ptl .ev{overflow:visible}
+.ptl .ev .pic{flex:1 1 auto;min-height:0;border-radius:22px 22px 0 0;overflow:hidden;position:relative}
+.ptl .ev .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none;max-height:none;filter:grayscale(.75) contrast(1.05);transition:filter .6s}
+.ptl .ev .txt{padding:18px 22px 22px}
+.ptl .ev .yr{font-family:var(--display);font-weight:800;font-size:56px;line-height:1;color:var(--muted);transition:color .4s}
+.ptl .ev .txt b{display:block;font-size:20px;margin-top:6px}
+.ptl .ev .txt p{font-size:19px;line-height:1.35;margin:6px 0 0;color:var(--muted)}
+.ptl .ev.on{transform:translateY(-14px);box-shadow:0 24px 48px rgba(38,46,41,.22);background:var(--cafe);color:var(--slide-bg)}
+.ptl .ev.on .yr{color:var(--oxido-lt)}
+.ptl .ev.on .txt p{color:rgba(243,244,238,.85)}
+.ptl .ev.on::before{background:var(--oxido);border-color:var(--oxido);transform:scale(1.3)}
+.ptl .ev.on .pic img{filter:none}
+.ctl{position:absolute;right:120px;top:318px;display:flex;gap:10px;z-index:4}
+.btn{font-family:var(--mono);font-size:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:1.5px solid var(--cafe);background:transparent;color:var(--cafe);padding:9px 18px;border-radius:99px;cursor:pointer;display:inline-flex;align-items:center;gap:10px}
+.btn:hover{background:var(--cafe);color:var(--slide-bg)}
+.btn .ic{width:0;height:0;border-left:11px solid currentColor;border-top:7px solid transparent;border-bottom:7px solid transparent}
+.btn.playing .ic{width:11px;height:14px;border:0;border-left:4px solid currentColor;border-right:4px solid currentColor}
+
+/* ===========================================================
+   WAFFLE de personas (100 trabajadores)
+   =========================================================== */
+.wf{position:absolute;left:120px;right:120px;top:400px;bottom:110px;display:grid;grid-template-columns:1.55fr 1fr;gap:70px;align-items:center}
+.waffle{display:grid;grid-template-columns:repeat(20,1fr);gap:14px 8px}
+.waffle svg{width:100%;height:68px;color:var(--cafe);transition:color .5s,opacity .5s,transform .5s var(--ease-spring)}
+.waffle svg.gone{color:var(--sand-2);opacity:.5;transform:translateY(6px) scale(.9)}
+.wf .legend{display:flex;gap:30px;margin-top:26px;font-family:var(--mono);font-size:18px;font-weight:600}
+.wf .legend i{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:10px;vertical-align:-1px}
+.wf .counter .yr{font-family:var(--mono);font-size:22px;font-weight:600;letter-spacing:.1em;color:var(--oxido)}
+.wf .counter .num{font-family:var(--display);font-weight:800;font-size:170px;line-height:.9;margin-top:8px;font-variant-numeric:tabular-nums}
+.wf .counter p{font-size:26px;line-height:1.4;color:var(--muted);margin:14px 0 26px}
+
+/* ===========================================================
+   CURIOSIDADES — tarjetas que se dan vuelta
+   =========================================================== */
+.flips{position:absolute;left:120px;right:120px;top:380px;bottom:100px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.flip{perspective:1800px;cursor:pointer}
+.flip .in{position:relative;width:100%;height:100%;transition:transform .9s var(--ease-spring);transform-style:preserve-3d}
+.flip.on .in{transform:rotateY(180deg)}
+.flip .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:26px;overflow:hidden}
+.flip .front img{width:100%;height:100%;object-fit:cover;max-width:none;max-height:none}
+.flip .front::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(12,16,13,.9) 0%,rgba(12,16,13,.2) 55%,rgba(12,16,13,0) 100%)}
+.flip .front h3{position:absolute;left:28px;right:28px;bottom:66px;z-index:2;color:#F3F4EE;font-size:44px;line-height:1.02;font-weight:700}
+.flip .front .hint{position:absolute;left:28px;bottom:26px;z-index:2;font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--oxido-lt)}
+.flip .back{transform:rotateY(180deg);background:var(--cafe);color:var(--slide-bg);padding:36px 32px;display:flex;flex-direction:column}
+.flip .back .big{font-family:var(--display);font-weight:800;font-size:66px;line-height:.95;color:var(--oxido-lt)}
+.flip .back p{font-size:22px;line-height:1.45;margin:18px 0 0;color:rgba(243,244,238,.9)}
+.flip .back .mini{margin-top:auto;height:210px;border-radius:16px;overflow:hidden}
+.flip .back .mini img{width:100%;height:100%;object-fit:cover;max-width:none;max-height:none}
+
+/* ===========================================================
+   ANTES / DESPUÉS arrastrable
+   =========================================================== */
+.compare{position:absolute;left:120px;right:120px;top:380px;bottom:96px;border-radius:40px;overflow:hidden}
 .compare .pane{position:absolute;inset:0}
-.compare .pane img{width:100%;height:100%;object-fit:cover}
+.compare .pane img{width:100%;height:100%;object-fit:cover;max-width:none;max-height:none}
 .compare .after{clip-path:inset(0 0 0 50%)}
-.compare .handle{position:absolute;top:0;bottom:0;left:50%;width:4px;background:var(--cafe);cursor:ew-resize;transform:translateX(-2px)}
+.compare .handle{position:absolute;top:0;bottom:0;left:50%;width:4px;background:var(--slide-bg);cursor:ew-resize;transform:translateX(-2px)}
 .compare .knob{position:absolute;top:50%;left:50%;width:64px;height:64px;border-radius:50%;background:var(--cafe);transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.4);cursor:ew-resize}
 .compare .knob svg{width:26px;height:26px;color:var(--slide-bg)}
 .compare .tag-l,.compare .tag-r{position:absolute;top:28px;font-family:var(--mono);font-size:19px;font-weight:600;background:rgba(4,6,8,.75);color:#F4F5EE;padding:10px 20px;border-radius:6px}
@@ -196,63 +276,46 @@ svg.sun{width:100%;height:100%}
 .compare.hint .after{transition:clip-path 1s var(--ease-spring)}
 
 /* ===========================================================
-   COMPONENTE · línea de tiempo
+   FUENTES Y CRÉDITOS
    =========================================================== */
-.timeline{position:absolute;left:120px;right:120px;bottom:130px;height:2px;background:var(--line);overflow:visible}
-.timeline::after{content:"";position:absolute;left:0;top:0;height:100%;width:0;background:var(--oxido);transition:width 1.8s var(--ease-spring) .2s}
-.visible .timeline::after{width:100%}
-.timeline .pt{position:absolute;top:-9px;width:20px;height:20px;border-radius:50%;background:var(--oxido);transform:translateX(-50%) scale(0);transition:transform .6s var(--ease-spring)}
-.visible .timeline .pt{transform:translateX(-50%) scale(1)}
-.timeline .yr{position:absolute;top:20px;font-size:22px;font-weight:600;color:var(--muted);transform:translateX(-50%)}
+.s-sources .copy{position:absolute;left:120px;top:110px;right:120px;bottom:100px}
+.s-sources h2{font-weight:500;font-size:80px;margin-bottom:40px}
+.s-sources .cols{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.s-sources h4{font-family:var(--display);font-weight:600;font-size:28px;color:var(--oxido);margin:0 0 12px}
+.s-sources ul{list-style:none;margin:0 0 28px;padding:0;font-size:20px;line-height:1.5;color:var(--cafe)}
+.s-sources li{border-bottom:1px solid var(--line);padding:8px 0}
+.s-sources a{color:inherit;text-decoration-color:rgba(166,64,42,.5);text-underline-offset:3px}
+.s-sources a:hover{color:var(--oxido)}
+.credits-list{columns:3;column-gap:44px;font-size:14.5px!important;line-height:1.35!important}
+.credits-list li{break-inside:avoid;padding:5px 0!important}
+.credits-list li span{color:var(--muted)}
 
-/* ===========================================================
-   SLIDE · CIERRE
-   =========================================================== */
-.s-close .copy{position:absolute;left:120px;top:0;bottom:0;width:1100px;display:flex;flex-direction:column;justify-content:center}
-.s-close h2{font-weight:600;font-size:110px;line-height:1}
-.s-close p{font-size:30px;line-height:1.5;color:var(--muted);margin-top:36px;max-width:920px}
-
-/* ===========================================================
-   SLIDE · FUENTES
-   =========================================================== */
-.s-sources .copy{position:absolute;left:120px;top:130px;right:120px;bottom:120px}
-.s-sources h2{font-weight:500;font-size:80px;margin-bottom:44px}
-.s-sources .cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:56px}
-.s-sources h4{font-family:var(--display);font-weight:500;font-size:26px;color:var(--oxido);margin:0 0 16px}
-.s-sources ul{list-style:none;margin:0 0 30px;padding:0;font-size:21px;line-height:1.7;color:var(--cafe)}
-.s-sources li{border-bottom:1px solid var(--line);padding:10px 0}
-
-
-/* ===========================================================
-   LIGHTBOX — cualquier foto del deck se puede tocar para verla
-   grande; Escape o click afuera cierra.
-   =========================================================== */
-.photo-card img{cursor:zoom-in}
-.lightbox{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;background:rgba(10,12,10,.9);opacity:0;pointer-events:none;transition:opacity .35s var(--ease)}
+/* LIGHTBOX */
+.photo-card img,.card-img img{cursor:zoom-in}
+.lightbox{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;background:rgba(10,12,10,.92);opacity:0;pointer-events:none;transition:opacity .35s var(--ease)}
 .lightbox.open{opacity:1;pointer-events:auto}
-.lightbox img{max-width:88vw;max-height:86vh;border-radius:20px;box-shadow:0 40px 90px rgba(0,0,0,.5);transform:scale(.92);transition:transform .35s var(--ease-spring)}
+.lightbox img{max-width:88vw;max-height:84vh;border-radius:20px;box-shadow:0 40px 90px rgba(0,0,0,.5);transform:scale(.92);transition:transform .35s var(--ease-spring)}
 .lightbox.open img{transform:scale(1)}
+.lightbox .lb-cap{font-family:var(--mono);font-size:15px;color:#C9CFC6;max-width:80vw;text-align:center}
 .lightbox .lb-close{position:absolute;top:32px;right:40px;font-family:var(--mono);font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:#F4F5EE;background:rgba(255,255,255,.12);padding:10px 20px;border-radius:99px;cursor:pointer}
 </style>
 </head>
 <body>
 
-<!-- ícono sol reutilizable (motivo decorativo del sistema) -->
 <svg width="0" height="0" style="position:absolute">
   <defs>
     <symbol id="sun" viewBox="0 0 64 64"><g fill="currentColor"><circle cx="32" cy="32" r="9"/><g id="ray"><rect x="30" y="2" width="4" height="16" rx="2"/></g>
       <use href="#ray" transform="rotate(45 32 32)"/><use href="#ray" transform="rotate(90 32 32)"/><use href="#ray" transform="rotate(135 32 32)"/>
       <use href="#ray" transform="rotate(180 32 32)"/><use href="#ray" transform="rotate(225 32 32)"/><use href="#ray" transform="rotate(270 32 32)"/><use href="#ray" transform="rotate(315 32 32)"/></g></symbol>
     <symbol id="arrows" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M8 7 3 12l5 5M16 7l5 5-5 5"/></symbol>
+    <symbol id="person" viewBox="0 0 24 44"><g fill="currentColor"><circle cx="12" cy="6.5" r="5.5"/><path d="M3 26v-8.5a9 9 0 0 1 18 0V26h-3.2v16h-4.3V29h-3v13H6.2V26z"/></g></symbol>
   </defs>
 </svg>
 
 <div class="deck-viewport"><div class="deck-stage" id="stage">
 
-<!-- ============================================================ -->
-<!-- SLIDE 1 · PORTADA -->
-<!-- ============================================================ -->
-<section class="slide s-cover active">
+<!-- 1 · PORTADA -->
+<section class="slide s-cover active" data-notes="Portada. Presentamos el trabajo: cuatro ciudades petroleras argentinas —Cutral Có, Plaza Huincul, Tartagal y General Mosconi— desde el auge de YPF hasta las puebladas. Arriba, los tanques de Plaza Huincul; abajo, un asado de los talleres de YPF en 1930 y las ruinas del cine del Barrio Esso: auge y abandono.">
   <div class="copy">
     <div class="r d1"><span class="eyebrow"><span class="dot"></span>Geografía · 1980 — 2001</span></div>
     <h1 class="r d2">Pueblos<br>del <em>petróleo</em></h1>
@@ -260,154 +323,218 @@ svg.sun{width:100%;height:100%}
     <div class="suns r d4"><svg class="sun-mark"><use href="#sun"/></svg><svg class="sun-mark"><use href="#sun"/></svg><svg class="sun-mark"><use href="#sun"/></svg></div>
   </div>
   <div class="meta r d5">Trabajo de Geografía · <b>Carratu Juan</b> · <b>Casero Bautista</b> · <b>Jimenez Santiago</b> · <b>Noguera Gabriel</b> · <b>San Martin Tomas</b></div>
-  <div class="photo photo-card zoom r d2"><img src="assets/huincul.jpg" alt="Tanques de almacenamiento de YPF en la estepa de Plaza Huincul, Neuquén"><span class="credit">Plaza Huincul, Neuquén</span></div>
+  <div class="collage">
+    <div class="photo-card zoom r d2"><img src="assets/huincul.jpg" alt="Tanques de almacenamiento de YPF en la estepa de Plaza Huincul, Neuquén"><span class="credit">Plaza Huincul, Neuquén</span></div>
+    <div class="photo-card zoom r d4"><img src="assets/img/asado1930.jpg" alt="Asado de los trabajadores de los talleres de YPF, 1930"><span class="credit">Talleres YPF, 1930</span></div>
+    <div class="photo-card zoom r d5"><img src="assets/img/cine_esso.jpg" alt="Ruinas del cine y teatro del Barrio Esso, Plaza Huincul"><span class="credit">Cine del Barrio Esso, hoy</span></div>
+  </div>
 </section>
 
-<!-- ============================================================ -->
-<!-- SLIDE 2 · DÓNDE PASÓ (mapa 3D real) -->
-<!-- ============================================================ -->
-<section class="slide s-map">
+<!-- 2 · MAPA 3D -->
+<section class="slide s-map" data-notes="Ubicamos las dos cuencas en el mapa: Neuquina (Cutral Có y Plaza Huincul, sobre la Ruta 22) y Noroeste (Tartagal y General Mosconi, sobre la Ruta 34, en Salta). Tocando cada pin se salta a esa parte de la presentación.">
   <div class="copy">
     <div class="r d1"><span class="eyebrow"><span class="dot"></span>Dónde pasó</span></div>
     <h2 class="r d2">Dos cuencas,<br>cuatro ciudades</h2>
     <div class="basin">
-      <div class="card sand r d3"><small>Neuquén</small><b>Cuenca Neuquina</b><span>Cutral Có · Plaza Huincul</span></div>
-      <div class="card cafe r d4" style="color:var(--slide-bg)"><small style="opacity:.7">Salta</small><b>Cuenca Noroeste</b><span style="opacity:.85">Tartagal · Gral. Mosconi</span></div>
+      <div class="card sand r d3"><div class="thumb"><img src="assets/img/refineria_huincul.jpg" alt=""></div><div><small>Neuquén · Ruta 22</small><b>Cuenca Neuquina</b><span>Cutral Có · Plaza Huincul</span></div></div>
+      <div class="card cafe r d4"><div class="thumb"><img src="assets/img/tartagal_pano.jpg" alt=""></div><div><small>Salta · Ruta 34</small><b>Cuenca Noroeste</b><span>Tartagal · Gral. Mosconi</span></div></div>
     </div>
   </div>
   <div class="stage3d r d3" id="mapStage"></div>
 </section>
 
-<!-- ============================================================ -->
-<!-- BLOQUE 1 · LA ERA DORADA (Integrante 1) -->
-<!-- ============================================================ -->
-<section class="slide s-lead">
+<!-- 3 · ORÍGENES (línea de tiempo con fotos) -->
+<section class="slide" id="origenes" data-notes="Antes del pueblo, el pozo. 1907: en Comodoro Rivadavia, buscando agua, aparece petróleo. 1918: el Pozo N°1 de Plaza Huincul da petróleo en plena estepa. 1922: se crea YPF, con Enrique Mosconi como director hasta 1930. 1928: el pozo Vespucio 1 en Salta da origen al campamento que hoy es General Mosconi. 1933: se funda Cutral Có, al lado de los yacimientos.">
   <div class="head">
+    <h2 class="r d1">Primero el pozo,<br>después el <em>pueblo</em></h2>
+    <p class="lead-copy r d2">Ninguna de estas ciudades existía antes del petróleo: nacieron alrededor de los pozos que perforaba el Estado.</p>
+  </div>
+  <div class="ctl r d2"><button class="btn playing" data-ptl-toggle><span class="ic"></span><span class="lbl">Pausa</span></button></div>
+  <div class="ptl" style="--n:5"><div class="bar"></div>
+    <div class="ev r d3"><div class="pic"><img src="assets/img/primer_pozo_cr.jpg" alt="Primer pozo de petróleo de Comodoro Rivadavia, 1907"></div><div class="txt"><div class="yr">1907</div><b>Comodoro Rivadavia</b><p>Buscando agua, aparece petróleo: el primer pozo del país.</p></div></div>
+    <div class="ev r d4"><div class="pic"><img src="assets/img/pozo8.jpg" alt="Surgencia del Pozo N°8 de Plaza Huincul, 1925" style="object-position:50% 30%"></div><div class="txt"><div class="yr">1918</div><b>Plaza Huincul</b><p>El Pozo N°1 da petróleo en plena estepa neuquina.</p></div></div>
+    <div class="ev r d5"><div class="pic"><img src="assets/img/mosconi.jpg" alt="Retrato de Enrique Mosconi"></div><div class="txt"><div class="yr">1922</div><b>Nace YPF</b><p>Petrolera del Estado; Enrique Mosconi la dirige hasta 1930.</p></div></div>
+    <div class="ev r d6"><div class="pic"><img src="assets/img/mosconi_plaza.jpg" alt="Plaza de General Mosconi, Salta"></div><div class="txt"><div class="yr">1928</div><b>Vespucio 1, Salta</b><p>Alrededor del pozo nace el campamento que hoy es General Mosconi.</p></div></div>
+    <div class="ev r d7"><div class="pic"><img src="assets/img/monumento_fundacional.jpg" alt="Monumento fundacional de Cutral Có"></div><div class="txt"><div class="yr">1933</div><b>Cutral Có</b><p>Se funda al lado de los yacimientos de Plaza Huincul.</p></div></div>
+  </div>
+</section>
+
+<!-- 4 · CAPÍTULO 1 -->
+<section class="slide hero" id="eraDorada" data-notes="Capítulo 1. En los 80, YPF no solo extraía petróleo: construía la ciudad entera alrededor del pozo.">
+  <img class="bg" src="assets/img/casa_admin.jpg" alt="">
+  <div class="shade"></div>
+  <span class="cap">Casa del administrador, Barrio Esso, Plaza Huincul</span>
+  <div class="hero-copy">
+    <div class="chapter r d1">Capítulo 1</div>
     <h2 class="r d2">La era<br><em>dorada</em></h2>
-    <p class="lead-copy r d3">A principios de los 80, YPF no solo extraía petróleo: construía la ciudad entera alrededor del pozo.</p>
+    <p class="r d3">A principios de los 80, YPF no solo extraía petróleo: construía la ciudad entera alrededor del pozo.</p>
+  </div>
+</section>
+
+<!-- 5 · COMPANY TOWN -->
+<section class="slide" data-notes="Modelo company town: el Estado, a través de YPF, diseñaba y financiaba el barrio, el hospital, la escuela, el club y hasta las colonias de vacaciones.">
+  <div class="head">
+    <h2 class="r d1">Una empresa,<br>una <em>ciudad</em></h2>
+    <p class="lead-copy r d2">Modelo <b>company town</b>: el barrio, el hospital y el club eran de YPF.</p>
   </div>
   <div class="split">
-    <div class="col r d3"><div class="photo-card zoom" style="aspect-ratio:4/5;max-height:640px"><img src="assets/avenida.jpg" alt="Avenida San Martín, Plaza Huincul, Neuquén"></div></div>
+    <div class="col r d3"><div class="photo-card zoom" style="height:100%"><img src="assets/avenida.jpg" alt="Avenida San Martín, Plaza Huincul, Neuquén"><span class="credit">Av. San Martín, Plaza Huincul</span></div></div>
     <div class="col r d4">
-      <span class="tag" style="margin-bottom:28px;width:fit-content">Modelo company town</span>
       <ul>
         <li>El Estado, vía YPF, diseñaba y financiaba el barrio: casas, calles, plazas.</li>
         <li>Hospital, escuela y policlínico propios, gratuitos para el personal.</li>
         <li>Clubes, cines y colonias de vacaciones sostenidos por la empresa.</li>
+        <li>Proveedurías con precios bajos y transporte para los trabajadores.</li>
       </ul>
     </div>
   </div>
 </section>
 
-<section class="slide">
+<!-- 6 · GALERÍA · LA VIDA YPF -->
+<section class="slide" data-notes="Galería: así era la vida en los campamentos de YPF. El asado de los talleres, la escuela y el acto escolar del campamento, la estación de servicio, la casa del administrador y el tren de la empresa. Tocando cualquier foto se agranda.">
+  <div class="head">
+    <h2 class="r d1">La vida<br>en el <em>campamento</em></h2>
+    <p class="lead-copy r d2">Escuela, fiestas, tren y estación de servicio: todo llevaba la sigla YPF. Tocá una foto para agrandarla.</p>
+  </div>
+  <div class="mosaic" style="grid-template-columns:repeat(5,1fr)">
+    <div class="photo-card big zoom r d3"><img src="assets/img/asado1930.jpg" alt="Asado de los talleres de YPF, 1930"><span class="credit">Asado de los talleres de YPF, 1930</span></div>
+    <div class="photo-card zoom r d4"><img src="assets/img/tordillo_escuela.jpg" alt="Escuela del campamento YPF El Tordillo"><span class="credit">Escuela, El Tordillo</span></div>
+    <div class="photo-card zoom r d5"><img src="assets/img/trebol_acto.jpg" alt="Acto en el campamento YPF El Trébol"><span class="credit">Acto, El Trébol</span></div>
+    <div class="photo-card zoom r d6"><img src="assets/img/estacion_antigua.jpg" alt="Antigua estación de servicio YPF"><span class="credit">Estación YPF</span></div>
+    <div class="photo-card zoom r d7"><img src="assets/img/destileria_huincul.jpg" alt="Destilería de YPF en Plaza Huincul"><span class="credit">Destilería YPF, Plaza Huincul</span></div>
+    <div class="photo-card zoom r d8"><img src="assets/img/camioneta_ypf.jpg" alt="Antigua camioneta de YPF"><span class="credit">Camioneta YPF</span></div>
+    <div class="photo-card zoom r d9"><img src="assets/img/trebol_escuela.jpg" alt="Alumnos de la escuela del campamento El Trébol"><span class="credit">Escuela, El Trébol</span></div>
+  </div>
+</section>
+
+<!-- 7 · CIUDADES PUJANTES -->
+<section class="slide" data-notes="Empleo formal, estable y bien pago sostenía una vida social intensa. Solo en Cutral Có y Plaza Huincul, YPF tenía 4.200 empleados antes de la privatización.">
   <div class="head">
     <h2 class="r d1">Ciudades<br><em>pujantes</em></h2>
     <p class="lead-copy r d2">Empleo formal, estable y bien pago sostenía una vida social intensa en Cutral Có, Plaza Huincul, Tartagal y Mosconi.</p>
   </div>
   <div class="grid3">
-    <div class="stat-card oxido r stack d3"><small>Empleo</small><div class="num">100%</div><p>estatal: YPF era el principal —a veces único— empleador del pueblo.</p></div>
-    <div class="stat-card cafe r stack d4"><small>Servicios</small><div class="num">+</div><p>vivienda, salud y educación garantizadas por la empresa del Estado, además de clubes, cines y colonias de vacaciones.</p></div>
-    <div class="photo-card zoom r stack d5"><img src="assets/torre.jpg" alt="Monumento a la torre petrolera en Ruta 22, Cutral Có"><span class="credit" style="left:20px;bottom:16px;background:rgba(4,6,8,.75);padding:6px 14px;border-radius:6px">Torre petrolera, Ruta 22</span></div>
+    <div class="stat-card oxido r stack d3"><small>Empleo YPF · Cutral Có</small><div class="num">4.200</div><p>trabajadores de YPF en Cutral Có y Plaza Huincul antes de la privatización.</p></div>
+    <div class="stat-card cafe r stack d4"><div class="card-img"><img src="assets/img/tordillo_casa.jpg" alt="Viviendas del campamento YPF El Tordillo"><span class="credit">Viviendas YPF, El Tordillo</span></div><small>Servicios</small><p style="margin-top:10px">Vivienda, salud y educación garantizadas por la empresa del Estado.</p></div>
+    <div class="photo-card zoom r stack d5"><img src="assets/torre.jpg" alt="Monumento a la torre petrolera en Ruta 22, Cutral Có"><span class="credit">Torre petrolera, Ruta 22</span></div>
   </div>
 </section>
 
-<!-- ============================================================ -->
-<!-- BLOQUE 2 · DEL ESTADO AL MERCADO (Integrante 2) -->
-<!-- ============================================================ -->
-<section class="slide s-lead">
-  <div class="head">
+<!-- 8 · CAPÍTULO 2 -->
+<section class="slide hero" data-notes="Capítulo 2. En los 90, YPF deja de ser estatal y el petróleo pasa a manos privadas, muchas extranjeras.">
+  <img class="bg" src="assets/img/refineria_huincul2.jpg" alt="">
+  <div class="shade"></div>
+  <span class="cap">Refinería de Plaza Huincul</span>
+  <div class="hero-copy">
+    <div class="chapter r d1">Capítulo 2</div>
     <h2 class="r d2">Del Estado<br>al <em>mercado</em></h2>
-    <p class="lead-copy r d3">En los años 90, YPF deja de ser estatal. El petróleo pasa a manos de empresas privadas, muchas de ellas extranjeras.</p>
+    <p class="r d3">En los años 90, YPF deja de ser estatal. El petróleo pasa a manos de empresas privadas, muchas de ellas extranjeras.</p>
   </div>
-  <div class="split">
-    <div class="col r d3">
-      <div class="stat-card oxido" style="height:100%"><small>Ley de Reforma del Estado</small><div class="num" style="font-size:110px">1989</div><p>Habilita la privatización de empresas públicas, YPF entre ellas.</p></div>
+</section>
+
+<!-- 9 · PRIVATIZACIÓN -->
+<section class="slide" data-notes="1989: la Ley de Reforma del Estado habilita privatizar empresas públicas. 1992: la Ley 24.145 dispone la privatización de YPF; en 1993 sale a la bolsa. 1999: Repsol compra el control. Todo esto durante la presidencia de Carlos Menem (1989-1999).">
+  <div class="head">
+    <h2 class="r d1">YPF se<br><em>vende</em></h2>
+    <p class="lead-copy r d2">En diez años, la empresa más grande del país pasa del Estado a una petrolera española.</p>
+  </div>
+  <div class="grid3">
+    <div class="stat-card oxido r stack d3"><small>Ley de Reforma del Estado</small><div class="num" style="font-size:110px">1989</div><p>Habilita la privatización de empresas públicas, YPF entre ellas.</p></div>
+    <div class="stat-card sand r stack d4"><small>Ley 24.145 → Repsol</small><div class="num" style="font-size:110px">1992–99</div><p>YPF se vuelve sociedad anónima, sale a la bolsa en 1993 y en 1999 Repsol se queda con el control.</p></div>
+    <div class="photo-card zoom r stack d5"><img src="assets/img/menem.jpg" alt="Carlos Menem con la banda presidencial" style="object-position:50% 20%"><span class="credit">Carlos Menem, presidente 1989-99</span></div>
+  </div>
+</section>
+
+<!-- 10 · WAFFLE -->
+<section class="slide" id="wfSlide" data-notes="Este es el dato central. En 1990 YPF tenía unos 51.000 trabajadores; en 1995 quedaban 5.690. De cada 100, quedaron 11. Los demás fueron despedidos o aceptaron retiros 'voluntarios'. Se puede pausar y volver a reproducir.">
+  <div class="head">
+    <h2 class="r d1">De cada 100,<br>quedaron <em>11</em></h2>
+    <p class="lead-copy r d2">Entre 1990 y 1995 YPF pasó de 51.000 a 5.690 trabajadores, entre despidos y retiros "voluntarios".</p>
+  </div>
+  <div class="wf">
+    <div class="r d3">
+      <div class="waffle" id="waffle"></div>
+      <div class="legend"><span><i style="background:var(--cafe)"></i>Siguen en YPF</span><span><i style="background:var(--sand-2)"></i>Despedidos o retirados</span></div>
     </div>
-    <div class="col r d4">
-      <div class="stat-card sand" style="height:100%"><small>YPF S.A. → Repsol</small><div class="num" style="font-size:110px">1993–99</div><p>YPF se transforma en sociedad anónima, sale a bolsa y en 1999 Repsol se queda con el control.</p></div>
+    <div class="counter r d4">
+      <div class="yr" id="wfYear">1990</div>
+      <div class="num" id="wfNum">51.000</div>
+      <p>trabajadores de YPF en todo el país. Cada figura = 510 personas.</p>
+      <button class="btn playing" id="wfBtn"><span class="ic"></span><span class="lbl">Pausa</span></button>
     </div>
   </div>
 </section>
 
-<section class="slide">
+<!-- 11 · CAPITALES -->
+<section class="slide" data-notes="Repsol compró el 97,81% de YPF en 1999. En la cuenca operaban además Total, Chevron, Pan American y Pluspetrol. Gran parte de las utilidades se iba a las casas matrices en vez de reinvertirse en la región.">
   <div class="head">
     <h2 class="r d1">Capitales en<br>la <em>cuenca</em></h2>
-    <p class="lead-copy r d2">La exploración y explotación queda repartida entre operadoras nacionales y extranjeras, cada una con distinta escala.</p>
+    <p class="lead-copy r d2">La explotación queda repartida entre operadoras nacionales y extranjeras, cada una con distinta escala.</p>
   </div>
-  <div class="split" style="grid-template-columns:1fr 1fr">
-    <div class="col r d3">
-      <div class="stat-card oxido" style="height:100%"><small>Repsol se queda con YPF</small><div class="num" style="font-size:110px">97,81%</div><p>de las acciones de YPF, adquiridas en dos tramos durante 1999.</p></div>
-    </div>
-    <div class="col r d4">
-      <div class="company-tags">
-        <span>Repsol · España</span><span>Total · Francia</span><span>Chevron · EE.UU.</span><span>Pan American · Arg./EE.UU.</span><span>Pluspetrol · Argentina</span>
-      </div>
-      <p style="font-size:24px;line-height:1.4;margin-top:28px;color:var(--muted)">Gran parte de las utilidades se repatría a las casas matrices, en lugar de reinvertirse en la región productora.</p>
-      <div style="margin-top:24px;padding:20px 26px;border-radius:14px;background:var(--sand);border-left:6px solid var(--oxido)">
-        <span style="font-family:var(--mono);font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--oxido-dk)">Contexto regional</span>
-        <p style="font-size:22px;line-height:1.4;margin:10px 0 0">No es un caso aislado: en la misma década, Venezuela abre PDVSA al capital extranjero con la <b>Apertura Petrolera</b> →</p>
-      </div>
+  <div class="split" style="grid-template-columns:1fr .75fr 1.15fr;gap:40px">
+    <div class="col r d3"><div class="stat-card oxido" style="height:100%"><small>Repsol se queda con YPF</small><div class="num" style="font-size:110px">97,81%</div><p>de las acciones de YPF, compradas en dos tramos durante 1999.</p></div></div>
+    <div class="col r d4"><div class="photo-card zoom" style="height:100%;border-radius:22px"><img src="assets/img/torre_repsol.jpg" alt="Torre Repsol-YPF en Buenos Aires"><span class="credit">Torre Repsol-YPF, Bs. As.</span></div></div>
+    <div class="col r d5">
+      <div class="company-tags"><span>Repsol · España</span><span>Total · Francia</span><span>Chevron · EE.UU.</span><span>Pan American · Arg./EE.UU.</span><span>Pluspetrol · Argentina</span></div>
+      <p style="font-size:24px;line-height:1.4;margin:28px 0 24px;color:var(--muted)">Gran parte de las utilidades se envía a las casas matrices, en lugar de reinvertirse en la región productora.</p>
+      <div class="note"><span>Contexto regional</span><p>En la misma década, Venezuela abre PDVSA al capital extranjero con la <b>Apertura Petrolera</b> →</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================ -->
-<!-- CONTEXTO REGIONAL · VENEZUELA (no estaba en el guión original) -->
-<!-- ============================================================ -->
-<section class="slide">
+<!-- 12 · VENEZUELA -->
+<section class="slide" data-notes="Mismo patrón en otro país: Venezuela abre PDVSA al capital extranjero con la Apertura Petrolera, pero sin privatizarla. En el mapa, la Faja del Orinoco, donde se armaron las grandes asociaciones con Conoco, ExxonMobil y BP.">
   <div class="head">
     <h2 class="r d1">Mismo giro,<br>otro <em>país</em></h2>
-    <p class="lead-copy r d2">La apertura al capital extranjero no fue solo argentina: en los 90, Venezuela abre PDVSA con la <em>Apertura Petrolera</em>, aunque sin privatizar la empresa estatal.</p>
+    <p class="lead-copy r d2">En los 90, Venezuela abre PDVSA con la <em>Apertura Petrolera</em>, aunque sin privatizar la empresa estatal.</p>
   </div>
-  <div class="split" style="grid-template-columns:1fr 1fr">
-    <div class="col r d3">
-      <div class="stat-card sand" style="margin-bottom:22px"><small>Petrozuata · 1993</small><b style="display:block;font-family:var(--display);font-weight:500;font-size:34px;margin-top:14px">Conoco 50,1% · PDVSA 49,9%</b><p>Primera gran asociación de la Faja del Orinoco; operativa desde 2001.</p></div>
-      <div class="stat-card cafe" style="color:var(--slide-bg)"><small style="opacity:.7">Cerro Negro · 1997</small><b style="display:block;font-family:var(--display);font-weight:500;font-size:34px;margin-top:14px">PDVSA 42% · ExxonMobil 42% · BP 16%</b><p style="opacity:.85">Una de las asociaciones estratégicas más grandes de la Apertura.</p></div>
+  <div class="split" style="grid-template-columns:1fr 1fr 1fr;gap:32px">
+    <div class="col r d3" style="gap:20px">
+      <div class="stat-card sand" style="padding:30px 34px"><small>Petrozuata · 1993</small><b style="display:block;font-family:var(--display);font-weight:600;font-size:34px;margin-top:10px">Conoco 50,1% · PDVSA 49,9%</b><p style="font-size:22px">Primera gran asociación de la Faja del Orinoco.</p></div>
+      <div class="stat-card cafe" style="padding:30px 34px"><small>Cerro Negro · 1997</small><b style="display:block;font-family:var(--display);font-weight:600;font-size:34px;margin-top:10px">PDVSA 42% · ExxonMobil 42% · BP 16%</b><p style="font-size:22px;opacity:.9">Una de las mayores de la Apertura.</p></div>
     </div>
-    <div class="col r d4">
-      <div class="company-tags">
-        <span>Conoco · EE.UU.</span><span>ExxonMobil · EE.UU.</span><span>BP · Reino Unido</span><span>Total · Francia</span><span>Chevron · EE.UU.</span>
-      </div>
-      <p style="font-size:24px;line-height:1.4;margin-top:28px;color:var(--muted)">Para 1997, PDVSA facturaba unos <b>USD 35.000 M</b> al año y superaba los <b>3 millones de barriles diarios</b>.</p>
-      <div style="margin-top:24px;padding:20px 26px;border-radius:14px;background:var(--sand);border-left:6px solid var(--oxido)">
-        <span style="font-family:var(--mono);font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--oxido-dk)">La diferencia clave</span>
-        <p style="font-size:22px;line-height:1.4;margin:10px 0 0">PDVSA nunca se privatiza: el Estado retiene la mayoría en cada asociación. YPF, en cambio, la pierde por completo en 1999.</p>
-      </div>
+    <div class="col r d4" style="gap:20px">
+      <div class="photo-card zoom" style="flex:1;border-radius:22px"><img src="assets/refineria.jpg" alt="Refinería de Puerto La Cruz, Venezuela"><span class="credit">Refinería, Puerto La Cruz</span></div>
+      <div class="photo-card" style="flex:1;border-radius:22px;background:#fff"><img src="assets/img/orinoco_map.jpg" alt="Mapa de la Faja petrolífera del Orinoco" style="object-fit:contain"><span class="credit">Faja del Orinoco</span></div>
+    </div>
+    <div class="col r d5">
+      <p style="font-size:24px;line-height:1.4;margin:0 0 24px;color:var(--muted)">Para 1997, PDVSA facturaba unos <b>USD 35.000 M</b> al año y superaba los <b>3 millones de barriles diarios</b>.</p>
+      <div class="note"><span>La diferencia clave</span><p>PDVSA nunca se privatiza: el Estado retiene la mayoría en cada asociación. YPF, en cambio, la pierde por completo en 1999.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================ -->
-<!-- CONTEXTO REGIONAL · LA VUELTA AL ESTADO (Venezuela + Argentina) -->
-<!-- ============================================================ -->
-<section class="slide">
+<!-- 13 · VUELTA AL ESTADO -->
+<section class="slide" data-notes="Años después el péndulo vuelve en los dos países: Venezuela nacionaliza la Faja del Orinoco (2001-2007) y Argentina expropia el 51% de YPF a Repsol en 2012 con la Ley 26.741.">
   <div class="head">
     <h2 class="r d1">La vuelta<br>al <em>Estado</em></h2>
     <p class="lead-copy r d2">Años después, el péndulo vuelve: los dos países recuperan el control de su petróleo.</p>
   </div>
   <div class="grid3">
-    <div class="stat-card cafe r stack d3" style="color:var(--slide-bg)"><small style="opacity:.7">Venezuela · 2001–2007</small><div class="num" style="font-size:100px">60%</div><p style="opacity:.9">La Ley de Hidrocarburos y la nacionalización de la Faja del Orinoco llevan a PDVSA a controlar, como mínimo, el 60% de cada empresa mixta.</p></div>
-    <div class="stat-card oxido r stack d4"><small>Argentina · 2012</small><div class="num" style="font-size:100px">51%</div><p>El Congreso expropia el 51% de las acciones de YPF en manos de Repsol — Ley 26.741, de Soberanía Hidrocarburífera.</p></div>
-    <div class="photo-card zoom r stack d5"><img src="assets/refineria.jpg" alt="Tanques de almacenamiento en la refinería de Puerto La Cruz, Venezuela"><span class="credit" style="left:20px;bottom:16px;background:rgba(4,6,8,.75);padding:6px 14px;border-radius:6px">Refinería, Puerto La Cruz</span></div>
+    <div class="stat-card cafe r stack d3"><div class="card-img"><img src="assets/img/chavez.jpg" alt="Hugo Chávez con trabajadores de PDVSA"><span class="credit">Hugo Chávez con PDVSA</span></div><small>Venezuela · 2001–2007</small><div class="num" style="font-size:90px">60%</div><p style="font-size:22px;opacity:.9">mínimo de PDVSA en cada empresa mixta, tras la Ley de Hidrocarburos y la nacionalización de la Faja.</p></div>
+    <div class="stat-card oxido r stack d4"><div class="card-img"><img src="assets/img/recuperacion.jpg" alt="Acto de recuperación de YPF, 2012"><span class="credit">Recuperación de YPF, 2012</span></div><small>Argentina · 2012</small><div class="num" style="font-size:90px">51%</div><p style="font-size:22px">de YPF expropiado a Repsol por la Ley 26.741 de Soberanía Hidrocarburífera.</p></div>
+    <div class="photo-card zoom r stack d5" style="border-radius:14px"><img src="assets/img/expropiacion.jpg" alt="Anuncio de la expropiación de YPF, 2012"><span class="credit">Anuncio de la expropiación, 2012</span></div>
   </div>
 </section>
 
-<!-- ============================================================ -->
-<!-- BLOQUE 3 · CIUDAD FANTASMA (Integrante 3) -->
-<!-- ============================================================ -->
-<section class="slide s-lead">
-  <div class="head">
-    <h2 class="r d2">Hacia la<br>ciudad <em>fantasma</em></h2>
-    <p class="lead-copy r d3">La privatización trae despidos masivos y retiros "voluntarios". El pueblo que YPF construyó empieza a vaciarse.</p>
+<!-- 14 · CAPÍTULO 3 con cifras -->
+<section class="slide hero" data-notes="Capítulo 3. La privatización trae despidos masivos. En Cutral Có YPF despidió a 3.600 de sus 4.200 empleados; la desocupación saltó del 3,6% en 1992 al 26% en 1996: unas 8.000 personas sin trabajo. De fondo, las ruinas del cine del Barrio Esso.">
+  <img class="bg" src="assets/img/cine_esso.jpg" alt="">
+  <div class="shade" style="background:linear-gradient(0deg,rgba(12,16,13,.92) 0%,rgba(12,16,13,.45) 55%,rgba(12,16,13,.7) 100%)"></div>
+  <span class="cap">Ruinas del cine y teatro del Barrio Esso</span>
+  <div class="hero-copy" style="bottom:auto;top:100px">
+    <div class="chapter r d1">Capítulo 3</div>
+    <h2 class="r d2" style="font-size:170px">Hacia la ciudad<br><em>fantasma</em></h2>
   </div>
-  <div class="grid3" style="top:auto;height:420px">
-    <div class="stat-card cafe r stack d3"><small>Empleo YPF, Cutral Có</small><div class="num" style="font-size:88px">3.600/4.200</div><p>puestos despedidos tras la privatización de 1992.</p></div>
-    <div class="stat-card oxido r stack d4"><small>Desocupación</small><div class="num" style="font-size:88px">3,6%→26%</div><p>entre 1992 y 1996, en Cutral Có y Plaza Huincul.</p></div>
-    <div class="stat-card sand r stack d5"><small>Sin trabajo</small><div class="num" style="font-size:88px">8.000</div><p>personas desocupadas hacia 1996, un cuarto de la población activa.</p></div>
+  <div class="glass-row">
+    <div class="glass r d3"><small>Empleo YPF, Cutral Có</small><div class="num">3.600<span style="font-size:.5em;opacity:.7"> de 4.200</span></div><p>puestos eliminados tras la privatización.</p></div>
+    <div class="glass r d4"><small>Desocupación</small><div class="num">3,6%<span style="color:var(--oxido-lt)">→</span>26%</div><p>entre 1992 y 1996, en Cutral Có y Plaza Huincul.</p></div>
+    <div class="glass r d5"><small>Sin trabajo</small><div class="num">8.000</div><p>personas desocupadas hacia 1996, un cuarto de la población activa.</p></div>
   </div>
 </section>
 
-<section class="slide">
+<!-- 15 · ANTES / DESPUÉS -->
+<section class="slide" data-notes="Deslizamos para comparar: el yacimiento en actividad contra lo que queda cuando la empresa se retira.">
   <div class="head">
     <h2 class="r d1">El mismo<br><em>lugar</em></h2>
     <p class="lead-copy r d2">Deslizá para comparar la vida del yacimiento en actividad con el paisaje que deja el retiro de la empresa.</p>
@@ -420,141 +547,211 @@ svg.sun{width:100%;height:100%}
   </div>
 </section>
 
-<!-- ============================================================ -->
-<!-- BLOQUE 4 · GEOGRAFÍA AMBIENTAL (Integrante 4) -->
-<!-- ============================================================ -->
-<section class="slide s-lead">
+<!-- 16 · GALERÍA · LO QUE QUEDÓ -->
+<section class="slide" data-notes="Lo que quedó del Barrio Esso, el primer asentamiento petrolero de Plaza Huincul: casas vacías, paredes sin techo. La foto del medio compara la casa del administrador antes y hoy.">
   <div class="head">
-    <h2 class="r d2">Geografía<br><em>ambiental</em></h2>
-    <p class="lead-copy r d3">Dos ecosistemas muy distintos —estepa patagónica y yungas salteñas— reciben la misma presión hidrocarburífera.</p>
+    <h2 class="r d1">Lo que<br><em>quedó</em></h2>
+    <p class="lead-copy r d2">El Barrio Esso, primer asentamiento petrolero de Plaza Huincul, hoy es un conjunto de ruinas.</p>
   </div>
-  <div class="split" style="top:400px">
-    <div class="col r d3"><div class="photo-card zoom" style="aspect-ratio:4/3"><img src="assets/estepa.jpg" alt="Estepa patagónica, Neuquén"><span class="credit" style="position:absolute;left:20px;bottom:16px;color:#fff;font-family:var(--mono);font-size:15px;background:rgba(4,6,8,.7);padding:6px 14px;border-radius:6px">Estepa patagónica</span></div></div>
-    <div class="col r d4"><div class="photo-card zoom" style="aspect-ratio:4/3"><img src="assets/yungas.jpg" alt="Selva de Yungas, norte argentino"><span class="credit" style="position:absolute;left:20px;bottom:16px;color:#fff;font-family:var(--mono);font-size:15px;background:rgba(4,6,8,.7);padding:6px 14px;border-radius:6px">Yungas · Chaco salteño</span></div></div>
+  <div class="mosaic">
+    <div class="photo-card big zoom r d3"><img src="assets/img/restos_esso.jpg" alt="Restos del Barrio Esso, Plaza Huincul"><span class="credit">Restos del Barrio Esso</span></div>
+    <div class="photo-card tall zoom r d4"><img src="assets/img/casa_antes_hoy.jpg" style="object-fit:contain;background:#1b1f1c" alt="La casa del administrador del Barrio Esso, antes y hoy"><span class="credit">Casa del administrador: antes y hoy</span></div>
+    <div class="photo-card zoom r d5"><img src="assets/img/cine_esso.jpg" alt="Ruinas del cine del Barrio Esso"><span class="credit">El cine</span></div>
+    <div class="photo-card zoom r d6"><img src="assets/img/barrio_esso.jpg" alt="Barrio Esso, Plaza Huincul"><span class="credit">Primeras casas</span></div>
   </div>
 </section>
 
-<section class="slide">
+<!-- 17 · CAPÍTULO 4 -->
+<section class="slide hero" id="ambiental" data-notes="Capítulo 4. Dos ecosistemas muy distintos —estepa patagónica y yungas salteñas— reciben la misma presión de la actividad petrolera.">
+  <img class="bg" src="assets/estepa.jpg" alt="">
+  <div class="shade"></div>
+  <span class="cap">Estepa patagónica, Neuquén</span>
+  <div class="hero-copy">
+    <div class="chapter r d1">Capítulo 4</div>
+    <h2 class="r d2">Geografía<br><em>ambiental</em></h2>
+    <p class="r d3">Dos ecosistemas muy distintos reciben la misma presión hidrocarburífera.</p>
+  </div>
+</section>
+
+<!-- 18 · DOS ECOSISTEMAS -->
+<section class="slide" data-notes="Estepa patagónica en Neuquén: seca, ventosa, con guanacos y pastos duros. Yungas y Chaco salteño en el norte: selva húmeda de montaña. Mismos pozos, ecosistemas opuestos.">
   <div class="head">
-    <h2 class="r d1">Pasivos<br><em>ambientales</em></h2>
-    <p class="lead-copy r d2">Décadas de actividad dejan marcas que no siempre son visibles a simple vista.</p>
+    <h2 class="r d1">Estepa<br>y <em>selva</em></h2>
+    <p class="lead-copy r d2">Seca y ventosa en Neuquén; húmeda y montañosa en el norte de Salta.</p>
   </div>
   <div class="grid3">
-    <div class="stat-card sand r stack d3"><small>Suelo</small><b style="font-family:var(--display);font-size:34px;margin-top:14px;font-weight:500">Piletas de purga</b><p>Agua de producción y residuos acumulados a cielo abierto.</p></div>
-    <div class="stat-card sand r stack d4"><small>Hábitat</small><b style="font-family:var(--display);font-size:34px;margin-top:14px;font-weight:500">Fragmentación</b><p>Picadas, caminos y locaciones cortan el territorio de la fauna local.</p></div>
-    <div class="stat-card sand r stack d5"><small>Agua</small><b style="font-family:var(--display);font-size:34px;margin-top:14px;font-weight:500">Napas</b><p>Derrames y filtraciones contaminan el agua subterránea de la zona.</p></div>
+    <div class="photo-card zoom r stack d3" style="border-radius:22px"><img src="assets/estepa.jpg" alt="Estepa patagónica, Neuquén"><span class="credit">Estepa · Neuquén</span></div>
+    <div class="photo-card zoom r stack d4" style="border-radius:22px"><img src="assets/img/guanaco.jpg" alt="Guanaco en la estepa patagónica"><span class="credit">Guanaco, fauna de la estepa</span></div>
+    <div class="photo-card zoom r stack d5" style="border-radius:22px"><img src="assets/yungas.jpg" alt="Selva de Yungas, norte argentino"><span class="credit">Yungas · Salta</span></div>
   </div>
 </section>
 
-<!-- ============================================================ -->
-<!-- BLOQUE 5 · RESISTENCIA Y ORIGEN PIQUETERO (Integrante 5) -->
-<!-- ============================================================ -->
-<section class="slide s-lead">
+<!-- 19 · PASIVOS -->
+<section class="slide" data-notes="Pasivos ambientales: piletas de purga con agua de producción y residuos a cielo abierto; picadas y locaciones que fragmentan el hábitat; derrames y filtraciones que contaminan napas. Las fotos de las piletas y del derrame son ilustrativas, no de estas ciudades.">
   <div class="head">
-    <h2 class="r d2">Cortar la ruta<br>para <em>existir</em></h2>
-    <p class="lead-copy r d3">Sin fábrica que ocupar ni patrón a quien reclamarle, los vecinos usan lo único que tienen a mano: la ruta.</p>
+    <h2 class="r d1">Pasivos<br><em>ambientales</em></h2>
+    <p class="lead-copy r d2">Décadas de actividad dejan marcas que no siempre se ven a simple vista.</p>
   </div>
-  <div class="timeline r d4">
-    <div class="pt" style="left:6%;transition-delay:.5s"></div><div class="yr" style="left:6%">1996</div>
-    <div class="pt" style="left:50%;transition-delay:.9s"></div><div class="yr" style="left:50%">1997</div>
-    <div class="pt" style="left:94%;transition-delay:1.3s"></div><div class="yr" style="left:94%">2001</div>
-  </div>
-  <div class="split" style="top:400px;bottom:200px">
-    <div class="col r d3"><div class="photo-card zoom" style="aspect-ratio:16/10"><img src="assets/ruta22.jpg" alt="Ruta Nacional 22, Neuquén"><span class="credit" style="position:absolute;left:20px;bottom:16px;color:#fff;font-family:var(--mono);font-size:15px;background:rgba(4,6,8,.7);padding:6px 14px;border-radius:6px">Ruta Nacional 22</span></div></div>
-    <div class="col r d4">
-      <ul>
-        <li><b>Cutral Có y Plaza Huincul, 1996-97:</b> el "Cutralcazo", la primera pueblada.</li>
-        <li><b>Tartagal y Gral. Mosconi, 1997-2001:</b> la protesta se repite en el norte.</li>
-        <li>El corte de ruta se vuelve herramienta territorial para visibilizar el aislamiento.</li>
-      </ul>
-    </div>
+  <div class="grid3">
+    <div class="stat-card sand r stack d3"><div class="card-img"><img src="assets/img/sludge_pit.jpg" alt="Pileta de residuos petroleros"><span class="credit">Imagen ilustrativa</span></div><small>Suelo</small><b style="font-family:var(--display);font-size:40px;margin-top:6px;font-weight:600">Piletas de purga</b><p style="font-size:23px">Agua de producción y residuos acumulados a cielo abierto.</p></div>
+    <div class="stat-card sand r stack d4"><div class="card-img"><img src="assets/img/pump_payunia.jpg" alt="Bomba de extracción en La Payunia, Mendoza"><span class="credit">Bomba en La Payunia, Mendoza</span></div><small>Hábitat</small><b style="font-family:var(--display);font-size:40px;margin-top:6px;font-weight:600">Fragmentación</b><p style="font-size:23px">Picadas, caminos y locaciones cortan el territorio de la fauna.</p></div>
+    <div class="stat-card sand r stack d5"><div class="card-img"><img src="assets/img/wellhead_pollution.jpg" alt="Boca de pozo con suelo contaminado"><span class="credit">Imagen ilustrativa</span></div><small>Agua</small><b style="font-family:var(--display);font-size:40px;margin-top:6px;font-weight:600">Napas</b><p style="font-size:23px">Derrames y filtraciones contaminan el agua subterránea.</p></div>
   </div>
 </section>
 
-<section class="slide">
+<!-- 20 · CAPÍTULO 5 -->
+<section class="slide hero" id="resistencia" data-notes="Capítulo 5. Sin fábrica que ocupar ni patrón a quien reclamarle, los vecinos usan lo único que tienen a mano: la ruta.">
+  <img class="bg" src="assets/bloqueo.jpg" alt="">
+  <div class="shade"></div>
+  <span class="cap">Corte de ruta con quema de neumáticos</span>
+  <div class="hero-copy">
+    <div class="chapter r d1">Capítulo 5</div>
+    <h2 class="r d2">Cortar la ruta<br>para <em>existir</em></h2>
+    <p class="r d3">Sin fábrica que ocupar ni patrón a quien reclamarle, los vecinos usan lo único que tienen a mano: la ruta.</p>
+  </div>
+</section>
+
+<!-- 21 · PUEBLADAS (línea de tiempo con fotos) -->
+<section class="slide" data-notes="Junio de 1996: primera pueblada de Cutral Có y Plaza Huincul, unas 20.000 personas cortan la Ruta 22 durante una semana. Abril de 1997: segunda pueblada; la policía neuquina mata a Teresa Rodríguez, de 24 años. Mayo de 1997: la protesta llega a Tartagal y Mosconi, sobre la Ruta 34. Noviembre de 2000: muere Aníbal Verón en la represión de un corte en Salta. Junio de 2001: la Gendarmería reprime en Mosconi; mueren Carlos Santillán y Oscar Barrios. Diciembre de 2001: estalla la crisis en todo el país.">
+  <div class="head">
+    <h2 class="r d1">Las<br><em>puebladas</em></h2>
+    <p class="lead-copy r d2">Del sur al norte, el corte de ruta se vuelve la herramienta de los que se quedaron sin trabajo.</p>
+  </div>
+  <div class="ctl r d2"><button class="btn playing" data-ptl-toggle><span class="ic"></span><span class="lbl">Pausa</span></button></div>
+  <div class="ptl" style="--n:6;gap:16px"><div class="bar"></div>
+    <div class="ev r d3"><div class="pic"><img src="assets/ruta22.jpg" alt="Ruta Nacional 22, Neuquén"></div><div class="txt"><div class="yr">Jun 1996</div><b>Cutral Có · Huincul</b><p>~20.000 personas cortan la Ruta 22 durante una semana.</p></div></div>
+    <div class="ev r d4"><div class="pic"><img src="assets/img/teresa_vive.jpg" alt="Mural Teresa Vive, Cutral Có"></div><div class="txt"><div class="yr">Abr 1997</div><b>Teresa Rodríguez</b><p>Segunda pueblada: la policía la mata. Tenía 24 años.</p></div></div>
+    <div class="ev r d5"><div class="pic"><img src="assets/img/tartagal_pano.jpg" alt="Vista panorámica de Tartagal"></div><div class="txt"><div class="yr">May 1997</div><b>Tartagal · Mosconi</b><p>La protesta llega al norte: cortes en la Ruta 34.</p></div></div>
+    <div class="ev r d6"><div class="pic"><img src="assets/img/mosconi_terminal.jpg" alt="General Mosconi, Salta"></div><div class="txt"><div class="yr">Nov 2000</div><b>Aníbal Verón</b><p>Chofer despedido, muere en la represión de un corte.</p></div></div>
+    <div class="ev r d7"><div class="pic"><img src="assets/img/tartagal_plaza.jpg" alt="Plaza de Tartagal"></div><div class="txt"><div class="yr">Jun 2001</div><b>Gral. Mosconi</b><p>Represión de Gendarmería: mueren C. Santillán y O. Barrios.</p></div></div>
+    <div class="ev r d8"><div class="pic"><img src="assets/img/saqueos2001.jpg" alt="Plaza de Mayo, 20 de diciembre de 2001"></div><div class="txt"><div class="yr">Dic 2001</div><b>Todo el país</b><p>Estalla la crisis: el piquete ya es protesta nacional.</p></div></div>
+  </div>
+</section>
+
+<!-- 22 · ORGANIZACIÓN -->
+<section class="slide" data-notes="De esas puebladas nacen las primeras organizaciones de desocupados: asambleas, los MTD y la UTD de Mosconi. Organizaban cortes, comedores y cooperativas de trabajo. Este movimiento piquetero patagónico y salteño antecede al estallido de 2001.">
   <div class="head">
     <h2 class="r d1">De vecinos<br>a <em>organización</em></h2>
-    <p class="lead-copy r d2">De esas puebladas nacen las primeras estructuras propias de los desocupados.</p>
+    <p class="lead-copy r d2">De esas puebladas nacen las primeras organizaciones propias de los desocupados.</p>
   </div>
-  <div class="split">
-    <div class="col r d3"><div class="photo-card zoom" style="aspect-ratio:4/3"><img src="assets/bloqueo.jpg" alt="Quema de neumáticos en un corte de ruta, Argentina"></div></div>
+  <div class="split" style="grid-template-columns:1.1fr 1fr">
+    <div class="col r d3" style="display:grid;grid-template-columns:100%;grid-template-rows:minmax(0,1.3fr) minmax(0,1fr);gap:18px">
+      <div class="photo-card zoom" style="border-radius:22px"><img src="assets/bloqueo.jpg" alt="Quema de neumáticos en un corte de ruta, Argentina"><span class="credit">Corte de ruta</span></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;min-height:0">
+        <div class="photo-card zoom" style="border-radius:22px"><img src="assets/img/piqueteros.jpg" alt="Marcha piquetera"><span class="credit">Marcha piquetera, 2007</span></div>
+        <div class="photo-card zoom" style="border-radius:22px"><img src="assets/img/teresa_vive2.jpg" alt="Mural Teresa Vive"><span class="credit">"Teresa vive"</span></div>
+      </div>
+    </div>
     <div class="col r d4">
       <ul>
-        <li>Los cortes se organizan por asamblea, no por sindicato ni partido.</li>
-        <li>Surgen los Movimientos de Trabajadores Desocupados (MTD).</li>
-        <li>Aparecen cooperativas de trabajo que sostienen comedores y changas.</li>
-        <li>Este movimiento piquetero patagónico y salteño antecede al de 2001.</li>
+        <li>Los cortes se deciden en asamblea, no por sindicato ni partido.</li>
+        <li>Surgen los Movimientos de Trabajadores Desocupados (MTD) y la UTD de Mosconi.</li>
+        <li>Cooperativas de trabajo sostienen comedores y changas.</li>
+        <li>Varias organizaciones toman el nombre de sus muertos: Teresa Rodríguez, Aníbal Verón.</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- ============================================================ -->
-<!-- CIERRE -->
-<!-- ============================================================ -->
-<section class="slide s-close">
-  <div class="copy">
-    <div class="r d1"><span class="eyebrow"><span class="dot"></span>Para cerrar</span></div>
-    <h2 class="r d2">Un pueblo puede nacer<br>y morir <em>con el pozo</em></h2>
-    <p class="r d3">Cutral Có, Plaza Huincul, Tartagal y Mosconi muestran cómo una decisión económica —estatizar o privatizar un recurso— reordena por completo la geografía, la sociedad y el ambiente de un territorio.</p>
+<!-- 23 · CURIOSIDADES -->
+<section class="slide" id="curiosidades" data-notes="Curiosidades: tocamos cada tarjeta para darla vuelta. Cutral Có significa 'agua de fuego' en mapudungun. El petróleo de Plaza Huincul se buscó porque el agua de los pozos tenía gusto a querosén, según contaba la pobladora Carmen Funes. En Plaza Huincul apareció el Argentinosaurus, uno de los animales terrestres más grandes que existieron. Y la ciudad de General Mosconi lleva el nombre del primer director de YPF.">
+  <div class="head">
+    <h2 class="r d1">Datos<br><em>curiosos</em></h2>
+    <p class="lead-copy r d2">Tocá cada tarjeta para darla vuelta.</p>
   </div>
-  <div class="suns r d4" style="position:absolute;left:120px;bottom:96px;display:flex;gap:16px"><svg class="sun-mark" style="width:48px;height:48px"><use href="#sun"/></svg><svg class="sun-mark" style="width:48px;height:48px"><use href="#sun"/></svg><svg class="sun-mark" style="width:48px;height:48px"><use href="#sun"/></svg></div>
+  <div class="flips">
+    <div class="flip r d3"><div class="in">
+      <div class="face front"><img src="assets/img/rayos.jpg" alt=""><h3>¿Qué significa "Cutral Có"?</h3><span class="hint">Tocá para ver</span></div>
+      <div class="face back"><div class="big">"Agua de fuego"</div><p>En mapudungun, <i>kütral</i> es fuego y <i>ko</i> es agua. Un nombre perfecto para un pueblo petrolero.</p><div class="mini"><img src="assets/torre.jpg" alt=""></div></div>
+    </div></div>
+    <div class="flip r d4"><div class="in">
+      <div class="face front"><img src="assets/img/carmen_funes_placa.jpg" alt=""><h3>¿Qué pista llevó al petróleo de Huincul?</h3><span class="hint">Tocá para ver</span></div>
+      <div class="face back"><div class="big">Agua con gusto a querosén</div><p>La pobladora Carmen Funes contaba que el agua de la zona sabía a querosén. El Pozo N°1 dio petróleo en 1918.</p><div class="mini"><img src="assets/img/destileria_cutral.jpg" alt=""></div></div>
+    </div></div>
+    <div class="flip r d5"><div class="in">
+      <div class="face front"><img src="assets/img/carmen_funes_museo.jpg" alt=""><h3>¿Qué gigante apareció en Plaza Huincul?</h3><span class="hint">Tocá para ver</span></div>
+      <div class="face back"><div class="big">El Argentino&shy;saurus</div><p><i>Argentinosaurus huinculensis</i>: uno de los animales terrestres más grandes que existieron, de entre 30 y 35 m de largo. Está en el Museo Carmen Funes.</p><div class="mini" style="background:#fff"><img src="assets/img/argentinosaurus_escala.jpg" alt="" style="object-fit:contain"></div></div>
+    </div></div>
+    <div class="flip r d6"><div class="in">
+      <div class="face front"><img src="assets/img/mosconi.jpg" alt="" style="object-position:50% 20%"><h3>¿Quién es el "General Mosconi" de la ciudad salteña?</h3><span class="hint">Tocá para ver</span></div>
+      <div class="face back"><div class="big">El primer director de YPF</div><p>Enrique Mosconi dirigió YPF de 1922 a 1930 y defendió que el petróleo quedara en manos del Estado.</p><div class="mini"><img src="assets/img/mosconi_plaza.jpg" alt=""></div></div>
+    </div></div>
+  </div>
 </section>
 
-<!-- ============================================================ -->
-<!-- FUENTES Y CRÉDITOS -->
-<!-- ============================================================ -->
-<section class="slide s-sources">
+<!-- 24 · ¿Y HOY? -->
+<section class="slide" data-notes="Epílogo: el pozo vuelve. Desde 2011 YPF confirma el potencial de Vaca Muerta, petróleo y gas no convencional que se extrae con fractura hidráulica. Añelo, un pueblo rural, se convierte en el nuevo centro petrolero de Neuquén. Vuelven las mismas preguntas: quién se queda con la renta y qué pasa con el agua y el suelo.">
+  <div class="head">
+    <h2 class="r d1">¿Y hoy?<br>El pozo <em>vuelve</em></h2>
+    <p class="lead-copy r d2">Con Vaca Muerta, Neuquén tiene un nuevo pueblo petrolero: Añelo.</p>
+  </div>
+  <div class="mosaic" style="grid-template-columns:1.2fr 1fr 1fr">
+    <div class="photo-card tall zoom r d3"><img src="assets/img/anelo.jpg" alt="Añelo, Neuquén"><span class="credit">Añelo, Neuquén</span></div>
+    <div class="photo-card zoom r d4"><img src="assets/img/pump_cr2.jpg" alt="Bomba de balancín en la estepa patagónica"><span class="credit">Bomba de balancín ("cigüeña")</span></div>
+    <div class="photo-card zoom r d5" style="background:#fff"><img src="assets/img/neuquen_basin.jpg" alt="Mapa de la Cuenca Neuquina" style="object-fit:contain"><span class="credit">Cuenca Neuquina</span></div>
+    <div class="stat-card cafe r d6" style="grid-column:span 2;justify-content:center"><small>Las mismas preguntas</small><p style="font-size:28px;margin-top:12px">¿Quién se queda con la renta? ¿Qué pasa con el agua y el suelo con la fractura hidráulica? ¿Qué queda cuando se vaya el pozo?</p></div>
+  </div>
+</section>
+
+<!-- 25 · CIERRE -->
+<section class="slide hero" data-notes="Cerramos con la idea fuerza: una decisión económica —estatizar o privatizar un recurso— reordena por completo la geografía, la sociedad y el ambiente de un territorio. ¡Gracias! ¿Preguntas?">
+  <img class="bg" src="assets/img/luces.jpg" alt="">
+  <div class="shade"></div>
+  <div class="hero-copy">
+    <div class="chapter r d1">Para cerrar</div>
+    <h2 class="r d2" style="font-size:132px;white-space:nowrap">Un pueblo puede nacer<br>y morir <em>con el pozo</em></h2>
+    <p class="r d3">Cutral Có, Plaza Huincul, Tartagal y Mosconi muestran cómo una decisión económica —estatizar o privatizar un recurso— reordena la geografía, la sociedad y el ambiente de un territorio.</p>
+    <p class="r d4" style="font-family:var(--display);font-size:56px;font-weight:700;color:#F3F4EE">¡Gracias! · ¿Preguntas?</p>
+  </div>
+</section>
+
+<!-- 26 · FUENTES -->
+<section class="slide s-sources" data-notes="Fuentes de los datos.">
   <div class="copy">
-    <h2 class="r d1">Fuentes y créditos</h2>
+    <h2 class="r d1">Fuentes</h2>
     <div class="cols">
       <div class="r d2">
-        <h4>Fotografías</h4>
+        <h4>Argentina</h4>
         <ul>
-          <li>Tanques YPF, Plaza Huincul — Wikimedia Commons</li>
-          <li>Torre petrolera, Ruta 22, Cutral Có — Wikimedia Commons</li>
-          <li>Avenida San Martín, Plaza Huincul — Wikimedia Commons</li>
-          <li>Estepa patagónica — Wikimedia Commons</li>
-          <li>Yungas, Jujuy — Wikimedia Commons</li>
-          <li>Ruta Nacional 22, Neuquén — Wikimedia Commons</li>
-          <li>Quema de neumáticos, corte de ruta — P. M. Longo, Wikimedia Commons (CC BY 3.0)</li>
-          <li>Ruinas de asentamiento, Plaza Huincul — Wikimedia Commons</li>
-          <li>Refinería, Puerto La Cruz, Venezuela — Wikimedia Commons</li>
+          <li><a href="https://es.wikipedia.org/wiki/Puebladas_de_Cutral_C%C3%B3_y_Plaza_Huincul" target="_blank">Puebladas de Cutral Có y Plaza Huincul</a> — Wikipedia (empleo, desocupación, Teresa Rodríguez)</li>
+          <li><a href="https://www.lanacion.com.ar/politica/ypf-la-mayor-venta-del-estado-nid310050/" target="_blank">"YPF, la mayor venta del Estado"</a> — La Nación (Repsol, 97,81%)</li>
+          <li><a href="https://www.aacademica.org/000-027/198.pdf" target="_blank">"La lucha de los petroleros contra la privatización de YPF"</a> — Acta Académica (51.000 → 5.690 empleados)</li>
+          <li><a href="https://www.argentina.gob.ar/normativa/nacional/ley-26741-196894" target="_blank">Ley 26.741 de Soberanía Hidrocarburífera</a> — Boletín Oficial</li>
+          <li><a href="https://es.wikipedia.org/wiki/General_Mosconi_(Salta)" target="_blank">General Mosconi (Salta)</a> y <a href="https://es.wikipedia.org/wiki/Plaza_Huincul" target="_blank">Plaza Huincul</a> — Wikipedia</li>
+          <li><a href="https://www.pagina12.com.ar/339212-a-24-anos-de-las-puebladas-en-tartagal-y-mosconi" target="_blank">"A 24 años de las puebladas en Tartagal y Mosconi"</a> — Página/12</li>
+          <li><a href="https://es.wikipedia.org/wiki/An%C3%ADbal_Ver%C3%B3n" target="_blank">Aníbal Verón</a> — Wikipedia</li>
         </ul>
       </div>
       <div class="r d3">
-        <h4>Cifras · Argentina</h4>
+        <h4>Venezuela</h4>
         <ul>
-          <li>Empleo YPF, desocupación y puebladas — <i>Puebladas de Cutral Có y Plaza Huincul</i>, Wikipedia</li>
-          <li>Ley 24.145 (1992) — retiros e indemnizaciones tras la privatización</li>
-          <li>97,81% de YPF a Repsol (1999) — La Nación / CNMV</li>
+          <li><a href="https://es.wikipedia.org/wiki/Faja_petrol%C3%ADfera_del_Orinoco" target="_blank">Faja petrolífera del Orinoco</a> — Wikipedia (Apertura, asociaciones, PDVSA 1997)</li>
+          <li><a href="https://es.wikipedia.org/wiki/Petr%C3%B3leos_de_Venezuela" target="_blank">Petróleos de Venezuela (PDVSA)</a> — Wikipedia</li>
         </ul>
-        <h4>Cifras · Venezuela</h4>
+        <h4>Mapa y herramientas</h4>
         <ul>
-          <li>Apertura Petrolera y asociaciones estratégicas — <i>Faja petrolífera del Orinoco</i>, Wikipedia</li>
-          <li>Producción y facturación de PDVSA, 1997 — íd.</li>
-          <li>Ley Orgánica de Hidrocarburos (2001) y empresas mixtas — <i>Ley de Hidrocarburos de Venezuela</i>, Wikipedia</li>
-          <li>Ley 26.741, expropiación del 51% de YPF (2012) — Boletín Oficial de la República Argentina</li>
-        </ul>
-      </div>
-      <div class="r d4">
-        <h4>Mapa</h4>
-        <ul>
-          <li>Contorno de Argentina — world.geo.json (datos geográficos abiertos)</li>
-        </ul>
-        <h4>Herramientas</h4>
-        <ul>
-          <li>Three.js — mapa 3D</li>
-          <li>Google Fonts — Big Shoulders Display, IBM Plex Sans, IBM Plex Mono</li>
+          <li>Contorno de Argentina — world.geo.json (datos abiertos)</li>
+          <li>Three.js — mapa 3D · Google Fonts — Big Shoulders Display, IBM Plex</li>
+          <li>Fotos: Wikimedia Commons — detalle en la diapositiva siguiente</li>
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- 27 · CRÉDITOS DE IMÁGENES (se arma solo con assets/credits.js) -->
+<section class="slide s-sources" data-notes="Créditos de todas las fotos, con autor, licencia y enlace.">
+  <div class="copy">
+    <h2 class="r d1" style="font-size:64px;margin-bottom:26px">Créditos de imágenes</h2>
+    <ul class="credits-list r d2" id="creditsList">
+      <li>Tanques YPF, Plaza Huincul · Torre petrolera, Ruta 22 · Av. San Martín, Plaza Huincul · Estepa patagónica · Yungas · Ruta Nacional 22 · Ruinas, Plaza Huincul · Refinería de Puerto La Cruz — <span>Wikimedia Commons</span></li>
+      <li>Quema de neumáticos, corte de ruta — <span>P. M. Longo, Wikimedia Commons (CC BY 3.0)</span></li>
+    </ul>
   </div>
 </section>
 
 </div></div>
 
-<!-- chrome fuera del escenario -->
 <div class="embers" aria-hidden="true">
   <span style="--x:8%;--dur:15s;--delay:0s"></span>
   <span style="--x:19%;--dur:12s;--delay:3.4s"></span>
@@ -564,17 +761,16 @@ svg.sun{width:100%;height:100%}
   <span style="--x:78%;--dur:14s;--delay:6.8s"></span>
   <span style="--x:91%;--dur:12.5s;--delay:4.2s"></span>
 </div>
-<div class="chrome"><span class="count" id="count">1 / 15</span><div class="progress"><i id="prog"></i></div></div>
+<div class="chrome"><span class="count" id="count">1 / 1</span><div class="progress"><i id="prog"></i></div></div>
 <div id="helpTip">← → avanzar · M mapa · N notas · click en foto agranda · P imprimir/PDF</div>
 <div id="notesPanel"><span class="close" id="notesClose">cerrar (N)</span><h4>Notas del orador</h4><p id="notesText"></p></div>
-<div class="lightbox" id="lightbox"><span class="lb-close">cerrar (Esc)</span><img id="lightboxImg" src="" alt=""></div>
+<div class="lightbox" id="lightbox"><span class="lb-close">cerrar (Esc)</span><img id="lightboxImg" src="" alt=""><div class="lb-cap" id="lightboxCap"></div></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="assets/arg_data.js"></script>
+<script src="assets/credits.js"></script>
 <script>
-/* ===========================================================
-   ESCENARIO FIJO 16:9 — escala el stage completo
-   =========================================================== */
+/* ESCENARIO FIJO 16:9 */
 const stage=document.getElementById('stage');
 function fitStage(){
   const s=Math.min(innerWidth/1920,innerHeight/1080);
@@ -582,54 +778,39 @@ function fitStage(){
 }
 addEventListener('resize',fitStage); fitStage();
 
-/* ===========================================================
-   NOTAS DEL ORADOR POR SLIDE (tecla N)
-   =========================================================== */
-const NOTES=[
-"Portada. Presentamos el trabajo: cuatro ciudades petroleras argentinas, desde el auge de YPF hasta las puebladas.",
-"Ubicamos las dos cuencas en el mapa: Neuquina (Cutral Có, Plaza Huincul) y Noroeste (Tartagal, Gral. Mosconi).",
-"En los 80 YPF no solo daba trabajo, construía el pueblo entero alrededor del pozo — modelo 'company town'.",
-"Detallamos los servicios que YPF sostenía: vivienda, hospital, escuela, clubes y colonias de vacaciones.",
-"Explicamos la Ley de Reforma del Estado de 1989 y el camino de YPF hacia la privatización en los 90.",
-"Mostramos qué empresas entraron a la cuenca y por qué gran parte de las ganancias se va fuera del país.",
-"Mismo patrón en otro país: Venezuela abre PDVSA al capital extranjero con la Apertura Petrolera, aunque sin privatizarla del todo.",
-"Años después el péndulo vuelve en los dos países: Venezuela nacionaliza la Faja del Orinoco (2001-2007) y Argentina expropia el 51% de YPF a Repsol (2012).",
-"Los despidos masivos y retiros 'voluntarios' vacían el pueblo — cae el empleo, el comercio y la población.",
-"Comparamos con la imagen antes/después: el mismo tipo de paisaje, activo vs. lo que queda cuando la empresa se retira.",
-"Dos ecosistemas distintos, estepa patagónica y yungas salteñas, reciben la misma presión hidrocarburífera.",
-"Repasamos los pasivos ambientales concretos: piletas de purga, fragmentación del hábitat y contaminación de napas.",
-"Sin fábrica ni patrón, los vecinos usan la ruta como herramienta de protesta — línea de tiempo 1996-2001.",
-"De esas puebladas nacen los MTD y las cooperativas: el germen del movimiento piquetero patagónico y salteño.",
-"Cerramos con la idea fuerza: una decisión económica reordena por completo la geografía, la sociedad y el ambiente.",
-"Fuentes y créditos de las fotos y los datos usados."
-];
+/* NOTAS DEL ORADOR — salen del data-notes de cada slide (tecla N) */
 const notesPanel=document.getElementById('notesPanel'), notesText=document.getElementById('notesText');
 let notesOpen=false;
-function renderNotes(){ notesText.textContent = NOTES[i] || ''; }
+function renderNotes(){ notesText.textContent = slides[i].dataset.notes || ''; }
 function toggleNotes(force){ notesOpen = force!==undefined? force : !notesOpen; notesPanel.classList.toggle('open',notesOpen); renderNotes(); }
 document.getElementById('notesClose').addEventListener('click',()=>toggleNotes(false));
 
-/* ===========================================================
-   NAVEGACIÓN DE SLIDES
-   =========================================================== */
+/* HOOKS por slide: arrancan al entrar, se limpian al salir */
 const slides=[...document.querySelectorAll('.slide')];
-let i=0;
+const mapStage=document.getElementById('mapStage');
+let i=0, cleanup=[];
+const idx=id=>slides.indexOf(document.getElementById(id));
+
+function enter(slide){
+  slide.querySelectorAll('.ptl').forEach(p=>cleanup.push(startTimeline(p,slide)));
+  if(slide.contains(document.getElementById('waffle'))) cleanup.push(startWaffle());
+  if(slide.querySelector('#compareBox') && window.__compareHint) cleanup.push(window.__compareHint());
+  slide.querySelectorAll('.flip.on').forEach(f=>f.classList.remove('on'));
+}
+
+/* NAVEGACIÓN */
 const countEl=document.getElementById('count'), progEl=document.getElementById('prog');
 function go(n){
   i=Math.max(0,Math.min(slides.length-1,n));
+  cleanup.forEach(f=>f&&f()); cleanup=[];
   slides.forEach((s,k)=>{ s.classList.toggle('active',k===i); s.classList.remove('visible'); });
-  // reflow forzado en vez de doble rAF: un rAF encadenado puede quedar
-  // en pausa si la pestaña no está en primer plano (fondo/otra ventana),
-  // dejando la diapositiva siguiente invisible. void offsetWidth fuerza
-  // el reflow entre el remove y el add, lo que sí reinicia la transición
-  // CSS de forma fiable sin depender del scheduler de rAF.
-  void slides[i].offsetWidth;
+  void slides[i].offsetWidth; // reinicia las transiciones CSS sin depender de rAF
   slides[i].classList.add('visible');
   countEl.textContent=(i+1)+' / '+slides.length;
   progEl.style.width=((i+1)/slides.length*100)+'%';
   if(notesOpen) renderNotes();
-  document.getElementById('mapStage').style.display = (i===1)?'block':'none';
-  if(slides[i].querySelector('#compareBox') && window.__compareHint) setTimeout(window.__compareHint,900);
+  mapStage.style.display = slides[i].contains(mapStage)?'block':'none';
+  enter(slides[i]);
 }
 document.addEventListener('keydown',e=>{
   if(e.target && e.target.isContentEditable) return;
@@ -644,38 +825,85 @@ let touchX=null;
 addEventListener('touchstart',e=>touchX=e.touches[0].clientX,{passive:true});
 addEventListener('touchend',e=>{ if(touchX===null)return; const dx=e.changedTouches[0].clientX-touchX; if(Math.abs(dx)>60) go(dx<0?i+1:i-1); touchX=null; },{passive:true});
 document.addEventListener('click',e=>{
-  if(e.target.closest('#notesPanel,.compare,.chrome,#helpTip,.stage3d .lbl,.stage3d .hit,.photo-card,.lightbox'))return;
+  if(e.target.closest('#notesPanel,.compare,.chrome,#helpTip,.stage3d .lbl,.stage3d .hit,.photo-card,.card-img,.lightbox,.flip,.ptl .ev,.btn,a'))return;
   go(e.clientX>innerWidth/2?i+1:i-1);
 });
+// tras tocar un control, devolver el foco para que las flechas sigan andando
+document.addEventListener('pointerup',()=>{ if(document.activeElement && document.activeElement!==document.body) document.activeElement.blur(); });
+setTimeout(()=>document.getElementById('helpTip').classList.add('fade'),9000);
+
+/* LÍNEA DE TIEMPO CON FOTOS — avanza sola; tocar un hito salta ahí */
+function startTimeline(ptl,slide){
+  const evs=[...ptl.querySelectorAll('.ev')], bar=ptl.querySelector('.bar');
+  const btn=slide.querySelector('[data-ptl-toggle]');
+  let k=-1, timer=null;
+  const show=n=>{ k=n; evs.forEach((e,j)=>e.classList.toggle('on',j===k)); bar.style.width=((k+.5)/evs.length*100)+'%'; };
+  const setBtn=on=>{ if(!btn)return; btn.classList.toggle('playing',on); btn.querySelector('.lbl').textContent=on?'Pausa':'Reproducir'; };
+  const play=()=>{ clearInterval(timer); timer=setInterval(()=>show((k+1)%evs.length),3200); setBtn(true); };
+  const pause=()=>{ clearInterval(timer); timer=null; setBtn(false); };
+  const onEv=e=>{ const n=evs.indexOf(e.currentTarget); pause(); show(n); };
+  const onBtn=()=> timer?pause():play();
+  evs.forEach(e=>{ e.classList.remove('on'); e.addEventListener('click',onEv); });
+  bar.style.width='0';
+  btn&&btn.addEventListener('click',onBtn);
+  const t0=setTimeout(()=>{ show(0); play(); },1300);
+  return ()=>{ clearTimeout(t0); clearInterval(timer); evs.forEach(e=>e.removeEventListener('click',onEv)); btn&&btn.removeEventListener('click',onBtn); };
+}
+
+/* WAFFLE — 100 figuras = 51.000 trabajadores; se apagan 89 */
+const waffle=document.getElementById('waffle');
+for(let n=0;n<100;n++) waffle.insertAdjacentHTML('beforeend','<svg><use href="#person"/></svg>');
+const people=[...waffle.children];
+function startWaffle(){
+  const num=document.getElementById('wfNum'), yr=document.getElementById('wfYear'), btn=document.getElementById('wfBtn');
+  const DUR=4200; let p=0, last=null, raf=null, running=false, t0;
+  const draw=()=>{
+    const gone=Math.round(89*p);
+    people.forEach((s,k)=>s.classList.toggle('gone',k>=100-gone));
+    num.textContent=Math.round(51000-(51000-5690)*p).toLocaleString('es-AR');
+    yr.textContent=p>=1?'1995':String(1990+Math.floor(p*5));
+  };
+  const tick=t=>{ if(last!==null) p=Math.min(1,p+(t-last)/DUR); last=t; draw(); if(p<1) raf=requestAnimationFrame(tick); else stop(); };
+  const setBtn=()=>{ btn.classList.toggle('playing',running); btn.querySelector('.lbl').textContent=running?'Pausa':(p>=1?'Repetir':'Reproducir'); };
+  const start=()=>{ if(p>=1) p=0; running=true; last=null; raf=requestAnimationFrame(tick); setBtn(); };
+  const stop=()=>{ running=false; cancelAnimationFrame(raf); setBtn(); };
+  const onBtn=()=> running?stop():start();
+  p=0; draw(); setBtn();
+  btn.addEventListener('click',onBtn);
+  t0=setTimeout(start,1500);
+  return ()=>{ clearTimeout(t0); stop(); btn.removeEventListener('click',onBtn); };
+}
+
+/* CURIOSIDADES — tarjetas que se dan vuelta */
+document.querySelectorAll('.flip').forEach(f=>f.addEventListener('click',()=>f.classList.toggle('on')));
+
+/* CRÉDITOS DE FOTOS — generados desde assets/credits.js */
+(function(){
+  const list=document.getElementById('creditsList'); if(!window.CREDITS) return;
+  const used=new Set([...document.querySelectorAll('img[src^="assets/img/"]')].map(im=>im.getAttribute('src').replace(/^assets\/img\/|\.jpg$/g,'')));
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  Object.entries(CREDITS).filter(([k])=>used.has(k)).forEach(([k,c])=>{
+    list.insertAdjacentHTML('beforeend',`<li><a href="${esc(c.url)}" target="_blank">${esc(c.title.replace(/\.\w+$/,''))}</a> — <span>${esc((c.artist||'').replace(/^(.+?)\1$/,'$1').replace(/^Anonymous/i,'').replace(/Unknown author/i,'Autor desconocido')||'Autor desconocido')} · ${esc(c.license)}</span></li>`);
+  });
+})();
+
 go(0);
 
-/* ===========================================================
-   LIGHTBOX — tocar cualquier foto del deck la agranda
-   =========================================================== */
-const lightbox=document.getElementById('lightbox'), lightboxImg=document.getElementById('lightboxImg');
-function openLightbox(img){ lightboxImg.src=img.src; lightboxImg.alt=img.alt; lightbox.classList.add('open'); }
+/* LIGHTBOX — tocar cualquier foto la agranda, con su epígrafe */
+const lightbox=document.getElementById('lightbox'), lightboxImg=document.getElementById('lightboxImg'), lightboxCap=document.getElementById('lightboxCap');
+function openLightbox(img){ lightboxImg.src=img.src; lightboxImg.alt=img.alt; lightboxCap.textContent=img.alt; lightbox.classList.add('open'); }
 function closeLightbox(){ lightbox.classList.remove('open'); }
-document.querySelectorAll('.photo-card img').forEach(img=>{
+document.querySelectorAll('.photo-card img,.card-img img').forEach(img=>{
   img.addEventListener('click',e=>{ e.stopPropagation(); openLightbox(img); });
 });
 lightbox.addEventListener('click',closeLightbox);
 
-/* ===========================================================
-   ANTES / DESPUÉS ARRASTRABLE (slide "el mismo lugar")
-   Apple-style: sigue el puntero 1:1, sin snap.
-   =========================================================== */
+/* ANTES / DESPUÉS ARRASTRABLE */
 (function(){
   const box=document.getElementById('compareBox'), handle=document.getElementById('handle'), after=document.getElementById('afterPane');
   let dragging=false, hintTimers=[];
-  function setPct(pct){
-    pct=Math.max(0,Math.min(100,pct));
-    handle.style.left=pct+'%';
-    after.style.clipPath=`inset(0 0 0 ${pct}%)`;
-  }
-  function setPos(clientX){
-    const r=box.getBoundingClientRect();
-    setPct(((clientX-r.left)/r.width)*100);
-  }
+  function setPct(pct){ pct=Math.max(0,Math.min(100,pct)); handle.style.left=pct+'%'; after.style.clipPath=`inset(0 0 0 ${pct}%)`; }
+  function setPos(clientX){ const r=box.getBoundingClientRect(); setPct(((clientX-r.left)/r.width)*100); }
   function cancelHint(){ hintTimers.forEach(clearTimeout); hintTimers=[]; box.classList.remove('hint'); }
   function down(e){ cancelHint(); dragging=true; setPos((e.touches?e.touches[0].clientX:e.clientX)); }
   function move(e){ if(!dragging)return; setPos((e.touches?e.touches[0].clientX:e.clientX)); }
@@ -684,49 +912,43 @@ lightbox.addEventListener('click',closeLightbox);
   box.addEventListener('mousedown',down);
   addEventListener('mousemove',move); addEventListener('touchmove',move,{passive:true});
   addEventListener('mouseup',up); addEventListener('touchend',up);
-  // pista de uso: al entrar a la slide, el slider se mueve solo una vez para
-  // sugerir que es arrastrable, y vuelve al centro antes de soltar el control.
+  // pista de uso: al entrar, el slider se mueve solo para mostrar que es arrastrable
   window.__compareHint=function(){
-    if(dragging)return;
-    box.classList.add('hint');
-    hintTimers.push(setTimeout(()=>setPct(36),150));
-    hintTimers.push(setTimeout(()=>setPct(50),1050));
-    hintTimers.push(setTimeout(()=>box.classList.remove('hint'),2050));
+    cancelHint(); box.classList.add('hint');
+    hintTimers.push(setTimeout(()=>setPct(28),1000));
+    hintTimers.push(setTimeout(()=>setPct(72),2100));
+    hintTimers.push(setTimeout(()=>setPct(50),3200));
+    hintTimers.push(setTimeout(()=>box.classList.remove('hint'),4200));
+    return cancelHint;
   };
+  if(slides[i].contains(box)) cleanup.push(window.__compareHint());
 })();
 
-/* ===========================================================
-   INCLINACIÓN 3D — tarjetas y fotos siguen el cursor (perspectiva
-   liviana en CSS, sin costo de WebGL). Se desactiva con reduced-motion.
-   =========================================================== */
+/* INCLINACIÓN 3D — tarjetas y fotos siguen el cursor */
 (function(){
   if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   let current=null;
   function reset(el){ el.style.transition='transform .5s var(--ease-spring)'; el.style.transform=''; }
   document.addEventListener('mousemove',e=>{
     const el=e.target.closest('.stat-card,.photo-card,.s-map .card');
-    if(!el){ if(current){reset(current); current=null;} return; }
+    if(!el || el.closest('.mosaic,.collage')){ if(current){reset(current); current=null;} return; }
     if(current && current!==el) reset(current);
     current=el;
     const r=el.getBoundingClientRect();
     const px=(e.clientX-r.left)/r.width, py=(e.clientY-r.top)/r.height;
-    const rx=(0.5-py)*8, ry=(px-0.5)*8;
     el.style.transition='transform .1s linear';
-    el.style.transform=`perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-8px) translateZ(10px)`;
+    el.style.transform=`perspective(1200px) rotateX(${(0.5-py)*8}deg) rotateY(${(px-0.5)*8}deg) translateY(-8px) translateZ(10px)`;
   });
   document.addEventListener('mouseleave',()=>{ if(current){reset(current); current=null;} });
 })();
 
 /* ===========================================================
    MAPA 3D — Argentina real (world.geo.json), extruido con three.js
-   como una placa de relieve inclinada (no de frente): la cámara
-   orbita en torno al objeto para dar paralaje real, en vez de
-   mirar de frente por el eje de extrusión (lo que aplanaba el
-   mapa anterior). Datos verificados visualmente contra la
-   silueta real del país (ver .frontend-slides/slide-previews/map3d-test.html).
+   como una placa de relieve inclinada; la cámara orbita despacio.
    =========================================================== */
 (function(){
-  const host=document.getElementById('mapStage');
+  if(!window.THREE) return;
+  const host=mapStage;
   const scene=new THREE.Scene();
   const camera=new THREE.PerspectiveCamera(48,1240/1080,0.1,100);
   const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
@@ -743,23 +965,19 @@ lightbox.addEventListener('click',closeLightbox);
 
   function toShape(ring){ const s=new THREE.Shape(); ring.forEach(([x,y],k)=>{ const [px,py]=project(x,y); k===0? s.moveTo(px,py): s.lineTo(px,py); }); return s; }
   const group=new THREE.Group();
-  const mat=new THREE.MeshStandardMaterial({color:0xCBBB8C,flatShading:true,roughness:.75}); // meseta ocre, cara superior
-  const matSide=new THREE.MeshStandardMaterial({color:0x4A4138,flatShading:true,roughness:.9}); // canto de tierra, en sombra
+  const mat=new THREE.MeshStandardMaterial({color:0xCBBB8C,flatShading:true,roughness:.75});
+  const matSide=new THREE.MeshStandardMaterial({color:0x4A4138,flatShading:true,roughness:.9});
   ARG_POLYGONS.forEach(ring=>{
     const geo=new THREE.ExtrudeGeometry(toShape(ring),{depth:EXDEPTH,bevelEnabled:true,bevelThickness:BEVEL,bevelSize:BEVEL,bevelSegments:3,steps:1});
     group.add(new THREE.Mesh(geo,[mat,matSide]));
   });
-  // la placa se acuesta como una maqueta de relieve inclinada hacia cámara,
-  // en vez de mostrar la cara plana de frente
   group.rotation.x=-Math.PI/180*58;
   scene.add(group);
 
-  // pines en las coordenadas reales de cada cuenca (por encima de la cara superior)
-  // — son el punto de entrada táctil al mapa: tocar uno vuela la cámara hasta
-  // ahí y abre la diapositiva de esa cuenca; la tecla M vuelve al mapa.
+  // pines: tocar uno salta a esa parte de la presentación; M vuelve al mapa
   const labelWrap=document.createElement('div'); labelWrap.style.cssText='position:absolute;inset:0;pointer-events:none'; host.appendChild(labelWrap);
   const PINZ=EXDEPTH+BEVEL+.03;
-  function addPin(city,targetSlide){
+  function addPin(city,targetId){
     const [px,py]=project(city.pos[0],city.pos[1]);
     const g=new THREE.Group();
     const cone=new THREE.Mesh(new THREE.ConeGeometry(.11,.4,16), new THREE.MeshStandardMaterial({color:0xA6402A,roughness:.55}));
@@ -770,15 +988,13 @@ lightbox.addEventListener('click',closeLightbox);
     group.add(g);
     const lbl=document.createElement('div'); lbl.className='lbl'; lbl.textContent=city.name; labelWrap.appendChild(lbl);
     const hit=document.createElement('div'); hit.className='hit'; labelWrap.appendChild(hit);
-    const pin={g,ring,lbl,hit,targetSlide,world:new THREE.Vector3(px,py,PINZ+.6),center:new THREE.Vector3(px,py,PINZ+.18)};
-    const onTap=e=>{ e.stopPropagation(); go(targetSlide); };
+    const pin={g,ring,lbl,hit,world:new THREE.Vector3(px,py,PINZ+.6),center:new THREE.Vector3(px,py,PINZ+.18)};
+    const onTap=e=>{ e.stopPropagation(); go(idx(targetId)); };
     lbl.addEventListener('click',onTap); hit.addEventListener('click',onTap);
     return pin;
   }
-  const pins=[addPin(ARG_CITIES.neuquen,2),addPin(ARG_CITIES.salta,10)];
+  const pins=[addPin(ARG_CITIES.neuquen,'eraDorada'),addPin(ARG_CITIES.salta,'resistencia')];
 
-  // encuadre robusto: caja/esfera envolvente real del grupo YA rotado,
-  // en vez de trigonometría manual sobre la proyección.
   group.updateMatrixWorld(true);
   const box=new THREE.Box3().setFromObject(group);
   const sphere=box.getBoundingSphere(new THREE.Sphere());
@@ -789,31 +1005,21 @@ lightbox.addEventListener('click',closeLightbox);
   camera.lookAt(center);
   const camSpherical=new THREE.Spherical().setFromVector3(camera.position.clone().sub(center));
 
-  // luz cálida principal + luz de relleno azulada (rim) + ambiente frío tenue
   scene.add(new THREE.AmbientLight(0xC9D0C6,.65));
   const key=new THREE.DirectionalLight(0xFFF6E4,1.1); key.position.copy(center).add(new THREE.Vector3(radius*.9,radius*1.9,radius*1.3)); scene.add(key);
   const rim=new THREE.DirectionalLight(0xE9DDB6,.4); rim.position.copy(center).add(new THREE.Vector3(-radius*1.6,radius*.7,-radius*.9)); scene.add(rim);
 
-  // sombra de contacto (blob suave) para anclar la placa al "piso" —
-  // más robusta que configurar un shadow-map sobre un grupo rotado.
   const shC=document.createElement('canvas'); shC.width=shC.height=256;
   const shCtx=shC.getContext('2d');
   const shGrad=shCtx.createRadialGradient(128,128,0,128,128,128);
   shGrad.addColorStop(0,'rgba(38,46,41,.3)'); shGrad.addColorStop(1,'rgba(38,46,41,0)');
   shCtx.fillStyle=shGrad; shCtx.fillRect(0,0,256,256);
-  const shadowMesh=new THREE.Mesh(
-    new THREE.PlaneGeometry(radius*2.6,radius*2.6),
-    new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(shC),transparent:true,depthWrite:false})
-  );
+  const shadowMesh=new THREE.Mesh(new THREE.PlaneGeometry(radius*2.6,radius*2.6), new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(shC),transparent:true,depthWrite:false}));
   shadowMesh.rotation.x=-Math.PI/2;
   shadowMesh.position.set(center.x,box.min.y-.02,center.z);
   scene.add(shadowMesh);
 
-  function resize(){
-    const w=host.clientWidth,h=host.clientHeight;
-    renderer.setSize(w,h);
-    camera.aspect=w/h; camera.updateProjectionMatrix();
-  }
+  function resize(){ const w=host.clientWidth,h=host.clientHeight; if(!w)return; renderer.setSize(w,h); camera.aspect=w/h; camera.updateProjectionMatrix(); }
   new ResizeObserver(resize).observe(host);
   resize();
 
@@ -821,26 +1027,16 @@ lightbox.addEventListener('click',closeLightbox);
   function positionLabels(){
     pins.forEach(p=>{
       const v=p.world.clone().applyMatrix4(group.matrixWorld).project(camera);
-      const x=(v.x*.5+.5)*host.clientWidth, y=(-v.y*.5+.5)*host.clientHeight;
-      p.lbl.style.left=x+'px'; p.lbl.style.top=y+'px';
-      // el hit-target usa el centro real del pin (no el punto elevado de la
-      // etiqueta) para que "tocar el pin" tape exactamente donde se ve.
+      p.lbl.style.left=((v.x*.5+.5)*host.clientWidth)+'px'; p.lbl.style.top=((-v.y*.5+.5)*host.clientHeight)+'px';
       const vc=p.center.clone().applyMatrix4(group.matrixWorld).project(camera);
-      p.hit.style.left=((vc.x*.5+.5)*host.clientWidth)+'px';
-      p.hit.style.top=((-vc.y*.5+.5)*host.clientHeight)+'px';
+      p.hit.style.left=((vc.x*.5+.5)*host.clientWidth)+'px'; p.hit.style.top=((-vc.y*.5+.5)*host.clientHeight)+'px';
     });
   }
   function animate(){
     requestAnimationFrame(animate);
-    if(host.style.display==='none'){return;}
+    if(host.style.display==='none') return;
     t+=0.01;
     if(!host.matches(':hover')){
-      // la cámara orbita despacio alrededor de la placa: paralaje real,
-      // no un simple vaivén del objeto sobre su propio eje. Se congela
-      // apenas el cursor entra al mapa para que los pines no se muevan
-      // justo cuando el usuario intenta tocarlos. :hover se re-evalúa
-      // solo (no queda "pegado" si el cursor deja de estar sobre el
-      // mapa sin disparar pointerleave, p. ej. al cambiar de slide).
       const s=camSpherical.clone(); s.theta+=Math.sin(t*0.12)*0.3;
       camera.position.copy(center).add(new THREE.Vector3().setFromSpherical(s));
       camera.lookAt(center);
