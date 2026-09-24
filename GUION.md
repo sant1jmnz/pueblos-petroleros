@@ -4,14 +4,14 @@ Cinco capítulos, uno por integrante. Cada guion dura unos 4 minutos leído tran
 
 | Capítulo | Slides | Palabras | Tiempo aprox. |
 |---|---|---|---|
-| Capítulo 1 · La era dorada | 1–7 | 526 | 4,0 min |
+| Capítulo 1 · La era dorada | 1–7 | 532 | 4,1 min |
 | Capítulo 2 · Del Estado al mercado | 8–12 | 522 | 4,0 min |
 | Capítulo 3 · Hacia la ciudad fantasma | 13–18 | 520 | 4,0 min |
-| Capítulo 4 · Cortar la ruta para existir | 19–21 | 522 | 4,0 min |
-| Capítulo 5 · El péndulo vuelve | 22–26 | 519 | 4,0 min |
+| Capítulo 4 · Cortar la ruta para existir | 19–21 | 532 | 4,1 min |
+| Capítulo 5 · El péndulo vuelve | 22–26 | 539 | 4,1 min |
 
 ## Capítulo 1 · La era dorada
-*Slides 1 a 7 · 526 palabras*
+*Slides 1 a 7 · 532 palabras*
 
 **Slide 1**: Portada
 
@@ -27,7 +27,7 @@ Arrancamos con el primer capítulo: la era dorada.
 
 **Slide 4**: Orígenes (línea de tiempo con fotos)
 
-Ninguna de estas ciudades existía antes del petróleo: primero apareció el pozo y después el pueblo. En 1907, en Comodoro Rivadavia, un equipo que perforaba buscando agua encuentra petróleo; es el primer hallazgo importante del país. En 1918 el Pozo N°1 de Plaza Huincul da petróleo en plena estepa neuquina, donde no vivía casi nadie. En 1922 el Estado crea YPF, la primera petrolera estatal del mundo fuera de la Unión Soviética, y la dirige el general Enrique Mosconi hasta 1930. Mosconi quería que el petróleo argentino quedara en manos argentinas. En 1928 el pozo Vespucio 1, en Salta, da origen al campamento que hoy es la ciudad de General Mosconi. Y en 1933 se funda Cutral Có, al lado de los yacimientos, para alojar a los trabajadores y sus familias.
+Ninguna de estas ciudades existía antes del petróleo: primero apareció el pozo y después el pueblo. En 1907, en Comodoro Rivadavia, un equipo que perforaba buscando agua encuentra petróleo; es el primer hallazgo importante del país. En 1918 el Pozo N°1 de Plaza Huincul da petróleo en plena estepa neuquina, donde no vivía casi nadie. En 1922 el Estado crea YPF, la primera petrolera estatal integrada del mundo, sin contar la Unión Soviética: buscaba, extraía, refinaba y vendía, y la dirige el general Enrique Mosconi hasta 1930. Mosconi quería que el petróleo argentino quedara en manos argentinas. En 1928 el pozo Vespucio 1, en Salta, da origen al campamento que hoy es la ciudad de General Mosconi. Y en 1933 se funda Cutral Có, al lado de los yacimientos, para alojar a los trabajadores y sus familias.
 
 **Slide 5**: Company town
 
@@ -92,7 +92,7 @@ Las dos zonas tienen ecosistemas muy distintos. En Neuquén está la estepa pata
 Esa actividad deja lo que se llama pasivos ambientales, es decir, daños que siguen ahí cuando termina la explotación. Primero, las piletas de purga, donde se acumulan a cielo abierto el agua de producción, que sale del pozo junto con el petróleo, y los residuos. Segundo, la fragmentación del hábitat: picadas, caminos y locaciones que cortan el territorio y aíslan a la fauna. Tercero, la contaminación de las napas por derrames y filtraciones, que llega al agua que usa la gente. Cerca de Cutral Có, en Loma La Lata, comunidades mapuche como Paynemil y Kaxipayiñ denunciaron agua contaminada con hidrocarburos y metales pesados. Las fotos de las piletas y del derrame son ilustrativas. Y ese daño no se va con la empresa: queda para los que se quedan.
 
 ## Capítulo 4 · Cortar la ruta para existir
-*Slides 19 a 21 · 522 palabras*
+*Slides 19 a 21 · 532 palabras*
 
 **Slide 19**: Capítulo 5
 
@@ -100,14 +100,14 @@ El capítulo cuatro es la resistencia. Los desocupados no tenían una fábrica q
 
 **Slide 20**: Puebladas (línea de tiempo con fotos)
 
-En junio de 1996, en Cutral Có y Plaza Huincul, el gobierno de Neuquén cancela un proyecto de planta de fertilizantes que prometía empleo. Es la gota que rebalsa el vaso: unas 20.000 personas cortan la Ruta 22 durante una semana. Es la primera pueblada; hay fogones, barricadas y el grito es "queremos trabajo". En esos días aparece la palabra "piqueteros" para nombrar a los que sostenían los cortes. Llega la Gendarmería para desalojar, pero frente a miles de vecinos, entre ellos familias enteras, se retira, y el gobernador tiene que ir a firmar un acuerdo. En abril de 1997 hay una segunda pueblada, que empieza con una huelga docente, y la policía de Neuquén mata a Teresa Rodríguez, una empleada doméstica de 24 años, madre de tres hijos, que no estaba en el corte. En mayo de 1997 la protesta llega al norte: Tartagal y General Mosconi cortan la Ruta 34. En noviembre de 2000 muere Aníbal Verón, un chofer de colectivos despedido al que le debían siete meses de sueldo, en la represión de un corte en Mosconi. En junio de 2001 la Gendarmería vuelve a reprimir en Mosconi y mueren Carlos Santillán y Oscar Barrios. Y en diciembre de 2001 estalla la crisis en todo el país. En pocos años, lo que empezó en dos pueblos petroleros se había convertido en un problema nacional.
+En junio de 1996, en Cutral Có y Plaza Huincul, el gobernador Felipe Sapag rompe el contrato con la empresa canadiense Agrium para construir una planta de fertilizantes, que prometía cientos de empleos. Es la gota que rebalsa el vaso: unas 20.000 personas cortan la Ruta 22 durante una semana. Es la primera pueblada; hay fogones, barricadas y el grito es "queremos trabajo". En esos días aparece la palabra "piqueteros" para nombrar a los que sostenían los cortes. Llega la Gendarmería para desalojar, pero frente a miles de vecinos, entre ellos familias enteras, termina retirándose, y el gobernador tiene que ir a firmar un acuerdo. En abril de 1997 hay una segunda pueblada, que empieza con una huelga docente, y la policía de Neuquén mata a Teresa Rodríguez, una joven empleada doméstica, madre de tres hijos, que iba caminando a trabajar y se detuvo a mirar. En mayo de 1997 la protesta llega al norte: Tartagal y General Mosconi cortan la Ruta 34. En noviembre de 2000 muere Aníbal Verón, un chofer de colectivos despedido que reclamaba ocho meses de sueldo adeudados, en la represión de un corte en Mosconi. En junio de 2001 la Gendarmería vuelve a reprimir en Mosconi y mueren Carlos Santillán y Oscar Barrios. Y en diciembre de 2001 estalla la crisis en todo el país. En pocos años, lo que empezó en dos pueblos petroleros se había convertido en un problema nacional.
 
 **Slide 21**: Organización
 
 De esas puebladas nacen organizaciones propias de los desocupados. Los cortes se deciden en asamblea, en la misma ruta, no por un sindicato ni por un partido político. Surgen los Movimientos de Trabajadores Desocupados y, en Salta, la Unión de Trabajadores Desocupados de Mosconi, la UTD, que todavía existe. Uno de sus referentes más conocidos es José "Pepino" Fernández, un ex trabajador de YPF. Muchas de las personas que participaban eran mujeres, que sostenían las ollas populares, organizaban los turnos en la ruta y hablaban en las asambleas. Estas organizaciones no solo protestaban: armaban cooperativas de trabajo, huertas, comedores y proyectos productivos, y negociaban planes de empleo con el Estado. Los planes sociales que se conquistaron en esos cortes, como los planes Trabajar, fueron durante años el ingreso principal de muchas familias. Varias organizaciones de todo el país tomaron el nombre de sus muertos, como el Movimiento Teresa Rodríguez o el MTD Aníbal Verón. Por eso se dice que el movimiento piquetero nació en estos pueblos petroleros, cinco años antes del estallido de 2001. Lo que empezó como un reclamo local terminó siendo una forma de protesta que se extendió a todo el país y que se sigue usando hasta hoy.
 
 ## Capítulo 5 · El péndulo vuelve
-*Slides 22 a 26 · 519 palabras*
+*Slides 22 a 26 · 539 palabras*
 
 **Slide 22**: Capítulo 5
 
@@ -115,15 +115,15 @@ El último capítulo se llama "el péndulo vuelve": después de privatizar, los 
 
 **Slide 23**: Vuelta al estado
 
-En Venezuela, con Hugo Chávez, la Ley de Hidrocarburos de 2001 obliga a que PDVSA tenga al menos el 60% de cada empresa mixta, y en 2007 se nacionaliza la Faja del Orinoco; algunas petroleras extranjeras, como ExxonMobil y ConocoPhillips, se van del país. En la Argentina, en 2012, el Congreso expropia el 51% de YPF a Repsol con la Ley 26.741 de Soberanía Hidrocarburífera. El argumento era que Repsol no invertía lo suficiente y que el país tenía que importar combustible. Dos años después, la Argentina le pagó a Repsol unos 5.000 millones de dólares en bonos. Hoy YPF es una sociedad anónima en la que el Estado tiene la mayoría de las acciones, pero una parte sigue cotizando en la bolsa. Y esta es la foto del anuncio de la expropiación... aunque está un poco desactualizada. (Tocar la foto.)
+En Venezuela, con Hugo Chávez, la Ley de Hidrocarburos de 2001 obliga a que el Estado tenga la mayoría en cada empresa mixta, y en 2007 se nacionaliza la Faja del Orinoco, donde PDVSA pasa a tener al menos el 60%; algunas petroleras extranjeras, como ExxonMobil y ConocoPhillips, se van del país. En la Argentina, en 2012, el Congreso expropia el 51% de YPF a Repsol con la Ley 26.741 de Soberanía Hidrocarburífera. El argumento era que Repsol no invertía lo suficiente y que el país tenía que importar combustible. Dos años después, la Argentina le pagó a Repsol unos 5.000 millones de dólares en bonos. Hoy YPF es una sociedad anónima en la que el Estado tiene la mayoría de las acciones, pero una parte sigue cotizando en la bolsa. Y esta es la foto del anuncio de la expropiación... aunque está un poco desactualizada. (Tocar la foto.)
 
 **Slide 24**: ¿y hoy?
 
-¿Y hoy? El petróleo vuelve a crear pueblos. Desde 2011 YPF confirma el potencial de Vaca Muerta, en Neuquén, una de las reservas de petróleo y gas no convencional más grandes del mundo. No convencional quiere decir que está atrapado en la roca y se extrae con fractura hidráulica, o fracking: se inyecta agua, arena y químicos a presión para romper la roca. Hoy Vaca Muerta es el motor del crecimiento de la producción de petróleo del país. Añelo, que era un pueblo rural de unos 2.500 habitantes en 2010, se convirtió en el nuevo centro petrolero de la provincia y creció a toda velocidad, con los mismos problemas de antes: falta de viviendas, de servicios y precios altísimos. Y vuelven las mismas preguntas de siempre: quién se queda con la renta, qué pasa con el agua y el suelo, y qué va a quedar cuando se vaya el pozo.
+¿Y hoy? El petróleo vuelve a crear pueblos. Desde 2011 YPF confirma el potencial de Vaca Muerta, en Neuquén, una de las reservas de petróleo y gas no convencional más grandes del mundo. No convencional quiere decir que está atrapado en la roca y se extrae con fractura hidráulica, o fracking: se inyecta agua, arena y químicos a presión para romper la roca. Hoy Vaca Muerta es el motor del crecimiento de la producción de petróleo del país. Añelo, que era un pueblo rural de unos 2.700 habitantes en 2010, se convirtió en el nuevo centro petrolero de la provincia y creció a toda velocidad, con los mismos problemas de antes: falta de viviendas, de servicios y precios altísimos. Y vuelven las mismas preguntas de siempre: quién se queda con la renta, qué pasa con el agua y el suelo, y qué va a quedar cuando se vaya el pozo.
 
 **Slide 25**: Curiosidades
 
-Antes de terminar, cuatro datos curiosos. (Tocar cada tarjeta.) Primero: Cutral Có significa "agua de fuego" en mapudungun, la lengua mapuche, y Huincul quiere decir "loma". Segundo: el petróleo de Plaza Huincul se buscó porque el agua tenía gusto a querosén, según contaba la pobladora Carmen Funes, que hoy le da nombre al museo de la ciudad. Tercero: en 1987 un productor de la zona encontró en Plaza Huincul un hueso que creyó que era un tronco petrificado; era del Argentinosaurus, uno de los animales terrestres más grandes que existieron, de más de 30 metros de largo. Y cuarto: la ciudad de General Mosconi lleva el nombre de Enrique Mosconi, el primer director de YPF.
+Antes de terminar, cuatro datos curiosos. (Tocar cada tarjeta.) Primero: Cutral Có significa "agua de fuego" en mapudungun, la lengua mapuche, y Huincul quiere decir "loma". Segundo: Carmen Funes, la primera pobladora de Plaza Huincul, se quejaba de que el agua de su aguada olía a querosén: era el petróleo. Murió en 1916, dos años antes del Pozo N°1, y hoy el museo de la ciudad lleva su nombre. Tercero: en 1987 un productor de la zona encontró en Plaza Huincul un hueso que creyó que era un tronco petrificado; era del Argentinosaurus, uno de los animales terrestres más grandes que existieron, de más de 30 metros de largo. Y cuarto: la ciudad de General Mosconi lleva el nombre de Enrique Mosconi, el primer director de YPF.
 
 **Slide 26**: Cierre
 
