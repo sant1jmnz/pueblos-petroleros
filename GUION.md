@@ -4,14 +4,14 @@ Cinco capítulos, uno por integrante. Cada guion dura unos 4 minutos leído tran
 
 | Capítulo | Slides | Palabras | Tiempo aprox. |
 |---|---|---|---|
-| Capítulo 1 · La era dorada | 1–7 | 532 | 4,1 min |
+| Capítulo 1 · La era dorada | 1–7 | 530 | 4,1 min |
 | Capítulo 2 · Del Estado al mercado | 8–12 | 522 | 4,0 min |
-| Capítulo 3 · Hacia la ciudad fantasma | 13–18 | 520 | 4,0 min |
+| Capítulo 3 · Hacia la ciudad fantasma | 13–18 | 530 | 4,1 min |
 | Capítulo 4 · Cortar la ruta para existir | 19–21 | 532 | 4,1 min |
 | Capítulo 5 · El péndulo vuelve | 22–26 | 539 | 4,1 min |
 
 ## Capítulo 1 · La era dorada
-*Slides 1 a 7 · 532 palabras*
+*Slides 1 a 7 · 530 palabras*
 
 **Slide 1**: Portada
 
@@ -31,15 +31,15 @@ Ninguna de estas ciudades existía antes del petróleo: primero apareció el poz
 
 **Slide 5**: Company town
 
-YPF funcionaba como lo que en inglés se llama "company town": una ciudad armada y sostenida por una sola empresa. YPF diseñaba y pagaba los barrios, las calles y las plazas. Tenía hospital propio y escuelas, gratis para el personal y sus familias. Sostenía clubes, cines, bibliotecas, colonias de vacaciones y proveedurías, que eran almacenes de la empresa con precios más bajos que los del mercado. En la práctica, YPF hacía el trabajo de un municipio: el Estado llegaba a esos lugares tan lejanos a través de su petrolera.
+YPF funcionaba como lo que en inglés se llama "company town": una ciudad armada y sostenida por una sola empresa. YPF diseñaba y pagaba los barrios, las calles y las plazas. Tenía hospital propio y escuelas, gratis para el personal y sus familias. Sostenía clubes, cines, bibliotecas, colonias de vacaciones y proveedurías, almacenes de la empresa con precios bajos. En la práctica, YPF hacía el trabajo de un municipio: el Estado llegaba a esos lugares tan lejanos a través de su petrolera.
 
 **Slide 6**: Galería · la vida ypf
 
-Estas fotos muestran cómo era esa vida. El asado de los talleres de YPF en 1930, la escuela y los actos escolares del campamento, la estación de servicio, la casa del administrador y la camioneta de la empresa. Lo que se ve es una comunidad entera organizada alrededor del trabajo petrolero: la empresa estaba en el trabajo, pero también en la escuela, en el club y en los festejos.
+Estas fotos muestran cómo era esa vida. El asado de los talleres de YPF en 1930, la escuela y los actos escolares del campamento, la estación de servicio, la destilería de Plaza Huincul y la camioneta de la empresa. Algunas son de campamentos de YPF en Chubut, como El Tordillo y El Trébol, cerca de Comodoro Rivadavia: la vida era parecida en todos. La empresa estaba en el trabajo, pero también en la escuela, en el club y en los festejos.
 
 **Slide 7**: Ciudades pujantes
 
-El trabajo en YPF era formal, estable y bien pago, con aportes, obra social y vacaciones. Solo en Cutral Có y Plaza Huincul la empresa tenía 4.200 empleados. Con la vivienda, la salud y la educación aseguradas, eran ciudades pujantes: había comercio, vida social y mucha gente que llegaba de otras provincias a buscar trabajo. Ser "ypefiano" daba orgullo y una identidad. Pero había un problema de fondo: casi todo dependía de una sola empresa. Si YPF cambiaba, cambiaba todo el pueblo. Y eso es justamente lo que pasó en los años 90.
+El trabajo en YPF era formal, estable y bien pago, con aportes, obra social y vacaciones. Solo en Cutral Có y Plaza Huincul la empresa tenía 4.200 empleados. Con la vivienda, la salud y la educación aseguradas, eran ciudades pujantes: había comercio, vida social y mucha gente que llegaba de otras provincias a buscar trabajo. Ser "ypefiano" daba orgullo y una identidad. Pero había un problema de fondo: casi todo dependía de una sola empresa. Y eso es justamente lo que pasó en los años 90.
 
 ## Capítulo 2 · Del Estado al mercado
 *Slides 8 a 12 · 522 palabras*
@@ -65,7 +65,7 @@ Después de la compra, Repsol quedó con el 97,81% de las acciones de YPF. Así 
 Esto no fue algo solo argentino: pasaba en toda América Latina. En los 90, Venezuela abrió su petrolera estatal, PDVSA, que era del Estado desde la nacionalización de 1976. Con la llamada Apertura Petrolera, se armaron asociaciones con empresas extranjeras en la Faja del Orinoco, una de las reservas de petróleo pesado más grandes del mundo, que se ve en el mapa. Por ejemplo, Petrozuata con Conoco en 1993 o Cerro Negro con ExxonMobil y BP en 1997. Pero hay una diferencia clave: Venezuela nunca privatizó PDVSA y el Estado se quedó con la empresa. La Argentina, en cambio, vendió YPF entera. Esa diferencia va a importar más adelante.
 
 ## Capítulo 3 · Hacia la ciudad fantasma
-*Slides 13 a 18 · 520 palabras*
+*Slides 13 a 18 · 530 palabras*
 
 **Slide 13**: Capítulo 3 con cifras
 
@@ -77,7 +77,7 @@ Acá comparamos el mismo tipo de lugar en dos momentos. A la izquierda, el yacim
 
 **Slide 15**: Galería · lo que quedó
 
-Esto es el Barrio Esso, el primer asentamiento petrolero de Plaza Huincul. Hoy son ruinas: casas vacías, paredes sin techo y un cine abandonado. La foto del medio muestra la casa del administrador antes y ahora: donde estaba la casa, hoy solo hay estepa. Estas ruinas son las marcas físicas de un modelo que se terminó: el de una empresa que construía y sostenía la ciudad. Para los vecinos que crecieron ahí, no son solo edificios viejos: es el lugar donde fueron a la escuela, al cine o al club.
+Esto es el Barrio Esso, el primer asentamiento petrolero de Plaza Huincul. Hoy son ruinas: casas vacías, paredes sin techo y un cine abandonado. Una de las fotos muestra la casa del administrador, la misma de la portada del capítulo uno, antes y ahora: hoy solo quedan los cimientos en medio de la estepa. Estas ruinas son las marcas físicas de un modelo que se terminó: el de una empresa que construía y sostenía la ciudad. Para los vecinos que crecieron ahí, no son solo edificios viejos: es el lugar donde fueron a la escuela, al cine o al club.
 
 **Slide 16**: Capítulo 4
 
